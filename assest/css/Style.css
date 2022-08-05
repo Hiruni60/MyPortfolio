@@ -9,6 +9,10 @@
 }*/
 /*position - fixed,absolute,relative,sticky,static*/
 /* display - block,inline,inline-block,flex,grid,inline-grid,flexbox*/
+body
+{
+  background-color: #ADCACE;
+}
 .navbar{
     position: fixed;
     top: 0;
@@ -57,8 +61,8 @@ nav ul li a:hover{
     margin-top: 13%;
 }
 .container h3{
-    font-size: 25px;
-    font-family: IBM Plex Serif;
+    font-size: 30px;
+    font-family: Inter;
     margin-bottom: 20px;
 }
 .container h5{
@@ -78,16 +82,22 @@ nav ul li a:hover{
 }
 .profile{
     width: 45%;
-    height: 80%;
+    height: 85%;
     position: absolute;
-    bottom: 45px;
-    right: 50px;
+    bottom: 90px;
+    right: 55px;
+
 }
 .home-portrait{
+
     height: 75%;
     position: absolute;
     left: 64%;
     bottom: 15px;
     transform: translateX(-60%);
     transition: bottom 1s,left 1s;
+    border-radius: 50%;
+}
+.home-para{
+    font-size: 25px;
 }
