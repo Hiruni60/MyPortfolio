@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+/*.hero{
+    width: 100%;
+    height: 100vh;
+}*/
+/*position - fixed,absolute,relative,sticky,static*/
+/* display - block,inline,inline-block,flex,grid,inline-grid,flexbox*/
+.navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #A6E6F4;
+}
+.logo{
+    width: 50px;
+    cursor: pointer;
+}
+nav{
+    display: inline;
+}
+ul {
+    height: 100%;
+    overflow: hidden;
+}
+nav ul li{
+    padding:20px 20px;
+    display: inline-block;
+    list-style-type: none;
+    height: 100%;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+nav ul li a:hover{
+    color: deeppink;
+}
+/*home section styling*/
+.Home{
+    display: flex;
+    background-color: #FEECFC;
+    width: 100%;
+    height: 100vh;
+}
+.container{
+    margin-left: 8%;
+    margin-top: 13%;
+}
+.container h3{
+    font-size: 25px;
+    font-family: IBM Plex Serif;
+    margin-bottom: 20px;
+}
+.container h5{
+    font-size: 15px;
+    font-family: Gideon Roman;
+}
+.container h1{
+    font-size: 45px;
+    font-family: Kaisei Opti;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+.container p{
+    font-family: Inter;
+    font-size: 100%;
+    padding: 20px;
+}
+.profile{
+    width: 45%;
+    height: 80%;
+    position: absolute;
+    bottom: 45px;
+    right: 50px;
+}
+.home-portrait{
+    height: 75%;
+    position: absolute;
+    left: 64%;
+    bottom: 15px;
+    transform: translateX(-60%);
+    transition: bottom 1s,left 1s;
+}
