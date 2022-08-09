@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+
 }
 /*.hero{
     width: 100%;
@@ -9,10 +10,7 @@
 }*/
 /*position - fixed,absolute,relative,sticky,static*/
 /* display - block,inline,inline-block,flex,grid,inline-grid,flexbox*/
-body
-{
-  background-color: #ADCACE;
-}
+
 .navbar{
     position: fixed;
     top: 0;
@@ -23,6 +21,10 @@ body
     display: flex;
     justify-content: flex-end;
     background-color: #A6E6F4;
+    z-index: 1;
+}
+body{
+    z-index: 0;
 }
 .logo{
     width: 50px;
@@ -33,7 +35,7 @@ nav{
 }
 ul {
     height: 100%;
-    overflow: hidden;
+    /*overflow: hidden;*/
 }
 nav ul li{
     padding:20px 20px;
@@ -52,7 +54,7 @@ nav ul li a:hover{
 /*home section styling*/
 .Home{
     display: flex;
-    background-color: #FEECFC;
+    background-color: #d1d8e0;
     width: 100%;
     height: 100vh;
 }
@@ -60,29 +62,29 @@ nav ul li a:hover{
     margin-left: 8%;
     margin-top: 13%;
 }
-.container h3{
+h3{
     font-size: 30px;
     font-family: Inter;
     margin-bottom: 20px;
 }
-.container h5{
+h5{
     font-size: 15px;
     font-family: Gideon Roman;
 }
-.container h1{
-    font-size: 45px;
+h1{
+    font-size: 50px;
     font-family: Kaisei Opti;
     margin-bottom: 20px;
     padding: 20px;
 }
-.container p{
+p{
     font-family: Inter;
     font-size: 100%;
     padding: 20px;
 }
 .profile{
-    width: 45%;
-    height: 85%;
+    width: 900px;
+    height: 300px;
     position: absolute;
     bottom: 90px;
     right: 55px;
@@ -90,9 +92,10 @@ nav ul li a:hover{
 }
 .home-portrait{
 
-    height: 75%;
+    height: 500px;
+    width: 450px;
     position: absolute;
-    left: 64%;
+    left: 80%;
     bottom: 15px;
     transform: translateX(-60%);
     transition: bottom 1s,left 1s;
@@ -100,4 +103,35 @@ nav ul li a:hover{
 }
 .home-para{
     font-size: 25px;
+}
+
+
+
+#About {
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    background-color: #d1d8e0;
+}
+
+#about-container{
+    width: 900px;
+    height: 300px;
+    position: absolute;
+    bottom: 90px;
+    left: 55px;
+}
+
+#about-portrait {
+
+    position: absolute;
+    width: 520px;
+    height: 600px;
+    left: 260px;
+    top: 210px;
+}
+
+#about-text {
+    position: relative;
+    margin-right: 70px;
 }
