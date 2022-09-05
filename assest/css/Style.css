@@ -62,7 +62,7 @@ nav ul li a:hover{
 
 .container{
     margin-left: 8%;
-    margin-top: 13%;
+    margin-top: 10%;
 }
 h3{
     font-size: 30px;
@@ -102,11 +102,11 @@ p{
 }
 .home-portrait{
 
-    height: 500px;
-    width: 450px;
+    height: 480px;
+    width: 430px;
     position: absolute;
     left: 80%;
-    bottom: 15px;
+    bottom: 90px;
     transform: translateX(-60%);
     transition: bottom 1s,left 1s;
     border-radius: 50%;
@@ -249,6 +249,38 @@ p{
 }
 .sub-class{
 
+    position: absolute;
+    width: 15%;
+    height: 6%;
+    /*background-image: linear-gradient(#c3cdd9,white,white,white);*/
+    bottom: 5%;
+    left: 75px;
+
+
+}
+#sub{
+    position: absolute;
+}
+#sub-img{
+    position: absolute;
+
+}
+.skill{
+    position: absolute;
+}
+.skills{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    size: auto;
+
+}
+
+#Services {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
 }
 
 
