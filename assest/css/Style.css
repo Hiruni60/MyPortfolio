@@ -252,7 +252,6 @@ p{
     position: absolute;
     width: 15%;
     height: 6%;
-    /*background-image: linear-gradient(#c3cdd9,white,white,white);*/
     bottom: 5%;
     left: 75px;
 
@@ -281,6 +280,116 @@ p{
     display: flex;
     flex-direction: column;
     align-content: space-around;
+    background-color:#d1d8e0;
+    position: relative;
+    justify-content: flex-end;
+
 }
+.serve-headline{
+    left: 50%;
+}
+
+#categoryS {
+    position: absolute;
+    top: 100px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    background-color: #d1d8e0;
+}
+
+.box {
+    padding: 20px;
+    background-color: #D9D9D9;
+    width: 227px;
+    height: 300px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 8px 4px rgba(0, 0, 0, 0.25));
+    transition: all ease 0.2s;
+
+}
+
+.ser-name {
+    font-family: Inter;
+    position: relative;
+    margin-left: 40px;
+    top: 230px;
+
+}
+
+
+#ui-image{
+    width: 220px;
+    height: 180px;
+    position: absolute;
+
+}
+#web-image{
+    width: 220px;
+    height: 180px;
+    position: absolute;
+}
+#app-image{
+    width: 220px;
+    height: 180px;
+    position: absolute;
+}
+
+.services-box:hover {
+    cursor: pointer;
+    filter: none;
+    transform: scale(0.99);
+}
+
+
+
+#plan {
+
+}
+
+
+#Projects{
+    width: auto;
+    height: auto;
+    position: relative;
+    display: flex;
+    background-color:#d1d8e0;
+
+
+}
+.proj-name{
+    position: absolute;
+    left:50%;
+    top:10px;
+}
+
+
+
+
+
+
+
+
+#Contacts{
+    width: auto;
+    height: auto;
+    position: absolute;
+    display: flex;
+    background-color:#d1d8e0;
+
+}
+.topic{
+    position: absolute;
+    left: 45%;
+    top: 10px;
+    font-size: 20px;
+    font-family: Inter;
+}
+.location{
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+}
+
 
 
