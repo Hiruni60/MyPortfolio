@@ -155,11 +155,11 @@ p{
     font-size: 18px;
     line-height: 24px;
 }
-
+/*Education*/
 #Education {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 1fr 1fr 1fr 1fr 1fr;
     position: relative;
     width: auto;
     height: auto;
@@ -167,6 +167,11 @@ p{
     background-color:#d1d8e0;
 }
 
+h1#desc {
+    grid-column: 1 / span 2;
+    grid-row: 1 / 1;
+    text-align: left;
+}
 
 .details{
     text-align: center;
@@ -200,23 +205,23 @@ p{
 }
 
 #star3 {
-    bottom: 250px;
+    bottom: 440px;
     width: 35px;
     height: 35px;
     position: absolute;
 }
 
 #star4 {
-    bottom: 100px;
+    bottom: 260px;
     width: 35px;
     height: 35px;
     position: absolute;
 }
 
 #line {
-    left: 600px;
+    left: 590px;
     top: 110px;
-    height: 82%;
+    height: 72%;
     position: absolute;
 }
 
@@ -247,26 +252,25 @@ p{
     grid-row: 5 / 5;
     border-radius:80%;
 }
+/* skills */
 .sub-class{
 
-    position: absolute;
-    width: 15%;
-    height: 6%;
-    bottom: 5%;
-    left: 75px;
+    grid-row: 6 / 6;
+    grid-column: 1 / span 2;
 
 
 }
-#sub{
-    position: absolute;
+#skill-img{
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
 }
-#sub-img{
-    position: absolute;
 
+#sub h2 {
+    margin-left: 30px;
 }
-.skill{
-    position: absolute;
-}
+
+
 .skills{
     position: relative;
     width: 50px;
@@ -274,6 +278,7 @@ p{
     size: auto;
 
 }
+/*Services*/
 
 #Services {
     height: auto;
@@ -290,7 +295,7 @@ p{
 }
 
 #categoryS {
-    position: absolute;
+    /*position: absolute;*/
     top: 100px;
     display: flex;
     width: 100%;
@@ -313,7 +318,7 @@ p{
     font-family: Inter;
     position: relative;
     margin-left: 40px;
-    top: 230px;
+    /*top: 230px;*/
 
 }
 
@@ -321,18 +326,18 @@ p{
 #ui-image{
     width: 220px;
     height: 180px;
-    position: absolute;
+    /*position: absolute;*/
 
 }
 #web-image{
     width: 220px;
     height: 180px;
-    position: absolute;
+    /*position: absolute;*/
 }
 #app-image{
     width: 220px;
     height: 180px;
-    position: absolute;
+    /*position: absolute;*/
 }
 
 .services-box:hover {
@@ -347,20 +352,20 @@ p{
 
 }
 
+/*Project*/
 
 #Projects{
     width: auto;
     height: auto;
-    position: relative;
     display: flex;
     background-color:#d1d8e0;
 
 
 }
 .proj-name{
-    position: absolute;
-    left:50%;
-    top:10px;
+    position: relative;
+    /*left:50%;*/
+    /*top:10px;*/
 }
 
 
@@ -368,18 +373,18 @@ p{
 
 
 
-
+/*Contact*/
 
 #Contacts{
     width: auto;
     height: auto;
-    position: absolute;
+    position: relative;
     display: flex;
     background-color:#d1d8e0;
 
 }
 .topic{
-    position: absolute;
+    position: relative;
     left: 45%;
     top: 10px;
     font-size: 20px;
