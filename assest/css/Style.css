@@ -394,8 +394,8 @@ h1#desc {
     width: auto;
     height: auto;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.3fr 1fr;
+    grid-template-columns: 0.25fr 1fr 0.25fr;
+    grid-template-rows: 0.3fr 1fr 0.5fr;
     background-color:#d1d8e0;
     position: relative;
     background-size: cover;
@@ -404,42 +404,64 @@ h1#desc {
 
 }
 .proj-name{
-    /*position: relative;*/
-    left:40%;
-    top:20px;
-    grid-column: auto;
+    position: relative;
+    /*left:45%;*/
     grid-row: 1/1;
-    /*text-align: center;*/
-    /*justify-content: center;*/
+    grid-column: 2/2;
+    text-align: center;
+    /*justify-content: space-between;*/
+    padding: 20px;
 }
 .firstC{
+    position: relative;
     grid-column: 1/1;
-    justify-content: space-evenly;
+    justify-items: center;
+    grid-row: 2/2;
+    display: flex;
+    justify-content: space-around;
 }
 .middleC{
     grid-column: 2/2;
-    justify-content: space-evenly;
+    justify-items: center;
     display: flex;
+    grid-row: 2/2;
+    justify-content: space-around;
+
 }
 .endC{
     grid-column: 3/3;
-    justify-content: space-evenly;
+    justify-items: center;
+    grid-row: 2/2;
+    display: flex;
+    justify-content: space-around;
 }
 .backBtn{
     width: 55px;
     height: 55px;
+    align-self: center;
+    place-self: center;
+
 }
 .nextBtn{
     width: 55px;
     height: 55px;
+    align-self: center;
+    place-self: center;
+
 }
 .hotelProj{
-    width: 300px;
-    height: 250px;
+    width: 430px;
+    height: 350px;
+    align-self: center;
+    place-self: center;
+
 }
 .keelsSMarketProj{
-    width: 300px;
-    height: 250px
+    width: 430px;
+    height: 350px;
+    align-self: center;
+    place-self: center;
+
 }
 
 
