@@ -351,13 +351,14 @@ h1#desc {
     width: 100%;
     justify-content: space-around;
     background-color: #d1d8e0;
+    padding-bottom: 30px;
 }
 .chose{
     color:orangered;
     padding: 30px;
 }
 .pBox{
-    padding: 20px;
+    padding:20px;
     background-color: #D9D9D9;
     width: 227px;
     height: 300px;
@@ -392,17 +393,54 @@ h1#desc {
 #Projects{
     width: auto;
     height: auto;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.3fr 1fr;
     background-color:#d1d8e0;
+    position: relative;
+    background-size: cover;
+    justify-content: space-evenly;
 
 
 }
 .proj-name{
-    position: relative;
+    /*position: relative;*/
     left:40%;
     top:20px;
+    grid-column: auto;
+    grid-row: 1/1;
+    /*text-align: center;*/
+    /*justify-content: center;*/
 }
-
+.firstC{
+    grid-column: 1/1;
+    justify-content: space-evenly;
+}
+.middleC{
+    grid-column: 2/2;
+    justify-content: space-evenly;
+    display: flex;
+}
+.endC{
+    grid-column: 3/3;
+    justify-content: space-evenly;
+}
+.backBtn{
+    width: 55px;
+    height: 55px;
+}
+.nextBtn{
+    width: 55px;
+    height: 55px;
+}
+.hotelProj{
+    width: 300px;
+    height: 250px;
+}
+.keelsSMarketProj{
+    width: 300px;
+    height: 250px
+}
 
 
 
@@ -420,11 +458,12 @@ h1#desc {
 }
 .topic{
     position: relative;
-    left: 45%;
+    left: 40%;
     top: 10px;
     font-size: 20px;
     font-family: Inter;
-    align-items: center;
+
+
 }
 .location{
     width: 100%;
@@ -435,16 +474,16 @@ h1#desc {
 }
 
 #info{
-    padding: 50px;
+    padding: 50px 0;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-    width: 100%;
 
 }
 .my-info{
     font-family: fantasy;
-    margin: 30px;
+
 }
 .info-detail{
     font-size: 25px;
@@ -452,6 +491,59 @@ h1#desc {
 .imageC{
     width: 35px;
     height: 35px;
+}
+#info div{
+    margin: 30px 0;
+}
+
+#sendMsgForm>form {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    column-gap: 100px;
+}
+
+#sendMsgForm>form>input{
+    height: 50px;
+    margin: 20px;
+}
+
+#sendMsgForm>form>input[id='name']{
+    grid-row: 1 / 1;
+    grid-column: 1 / 1;
+}
+#sendMsgForm>form>input[id='email']{
+    grid-row: 2 / 2;
+    grid-column: 1 / 1;
+}
+#sendMsgForm>form>input[id='subject']{
+    grid-row: 3 / 3;
+    grid-column: 1 / 1;
+}
+#sendMsgForm>form>textarea{
+    grid-row: 1 / span 2;
+    grid-column: 2 / 2;
+    margin: 20px;
+}
+
+#sendMsgForm>form #contact-btn{
+    color: #1c222e;
+    all: unset;
+    height: auto;
+    width: fit-content;
+    border-radius: 5px;
+    grid-row: 3 / 3;
+    grid-column: 2 / 2;
+    margin: 20px 20px 20px 150px;
+    padding: 0 40px;
+    transition: background-color 0.5s;
+}
+
+#contact #contact-btn:hover {
+    color: whitesmoke;
+    background-color: #202931;
+    cursor: pointer;
+    opacity: 0.8;
 }
 
 
