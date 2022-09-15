@@ -624,14 +624,20 @@ footer{
     padding: 15px;
 }
 .ftrec{
+    padding-top: 20px;
     position: center;
-    width: 670px;
-    height: 100px;
+    width: 600px;
+    height: 60px;
     border-radius: 35px;
     background-color: #92BEC8;
     border: transparent;
+    align-items: center;
+    justify-content: space-around;
+    display: flex;
+
 
 }
+
 
 
 
