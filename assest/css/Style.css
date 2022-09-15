@@ -418,15 +418,21 @@ h1#desc {
     justify-items: center;
     grid-row: 2/2;
     display: flex;
-    justify-content: space-around;
+    justify-self: center;
 }
 .middleC{
     grid-column: 2/2;
-    justify-items: center;
+    align-items: center;
     display: flex;
     grid-row: 2/2;
-    justify-content: space-around;
+    justify-content: center;
 
+}
+
+.middleC div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .endC{
     grid-column: 3/3;
@@ -450,21 +456,55 @@ h1#desc {
 
 }
 .hotelProj{
-    width: 430px;
+    width: 460px;
     height: 350px;
     align-self: center;
     place-self: center;
 
 }
 .keelsSMarketProj{
-    width: 430px;
+    width: 460px;
     height: 350px;
     align-self: center;
     place-self: center;
 
 }
+.endR{
+    grid-column: 2/2;
+    justify-items: center;
+    display: flex;
+    grid-row: 3/3;
+    justify-content: space-around;
+    font-size: 30px;
+}
+.download{
+    margin-top: -61px;
+    margin-left: 356px;
+    border: none;
+    color: white;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    /*margin: 4px 2px;*/
+    transition-duration: 0.4s;
+    cursor: pointer;
+    top: 300px;
+    justify-items: end;
+    align-self: end;
+    place-self: end;
 
 
+}
+.button1{
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50;
+}
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
 
 
 
@@ -475,6 +515,7 @@ h1#desc {
     height: auto;
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     background-color:#d1d8e0;
 
 }
@@ -490,13 +531,15 @@ h1#desc {
 .location{
     width: 100%;
     left: 30px;
-    padding: 120px 20px;
+    padding: 30px 20px;
+}
 
-
+.location > iframe {
+    width: 100%;
 }
 
 #info{
-    padding: 50px 0;
+    padding: 20px 0;
     width: 100%;
     display: flex;
     align-items: center;
@@ -508,6 +551,7 @@ h1#desc {
 
 }
 .info-detail{
+    display: inline;
     font-size: 25px;
 }
 .imageC{
@@ -515,13 +559,15 @@ h1#desc {
     height: 35px;
 }
 #info div{
-    margin: 30px 0;
+    margin: 15px 0;
 }
-
+.information{
+    margin-top: -151px;
+}
 #sendMsgForm>form {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto;
     column-gap: 100px;
 }
 
@@ -543,8 +589,8 @@ h1#desc {
     grid-column: 1 / 1;
 }
 #sendMsgForm>form>textarea{
-    grid-row: 1 / span 2;
-    grid-column: 2 / 2;
+    grid-row: 4 /  4;
+    grid-column: 1 / 1;
     margin: 20px;
 }
 
@@ -554,8 +600,8 @@ h1#desc {
     height: auto;
     width: fit-content;
     border-radius: 5px;
-    grid-row: 3 / 3;
-    grid-column: 2 / 2;
+    grid-row: 5 / 5;
+    grid-column: 1 / 1;
     margin: 20px 20px 20px 150px;
     padding: 0 40px;
     transition: background-color 0.5s;
@@ -567,7 +613,25 @@ h1#desc {
     cursor: pointer;
     opacity: 0.8;
 }
+/*footer*/
 
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    background-color: #d1d8e0;
+    padding: 15px;
+}
+.ftrec{
+    position: center;
+    width: 670px;
+    height: 100px;
+    border-radius: 35px;
+    background-color: #92BEC8;
+    border: transparent;
+
+}
 
 
 
