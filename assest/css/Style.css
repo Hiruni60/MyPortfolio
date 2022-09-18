@@ -26,10 +26,7 @@
 body{
     z-index: 0;
 }
-.logo{
-    width: 50px;
-    cursor: pointer;
-}
+
 nav{
     display: inline;
 }
@@ -51,6 +48,26 @@ nav ul li a{
 nav ul li a:hover{
     color: deeppink;
 }
+
+#check{
+    display: none;
+}
+nav .icon-b{
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+nav .icon-b .lines{
+    width: 20px;
+    height: 4px;
+    background-color: black;
+    margin: 5px;
+    border-radius: 3px;
+    transition: all .5s ease-in-out;
+}
+
 /*home section styling*/
 .Home{
     display: flex;
@@ -102,10 +119,10 @@ p{
 }
 .home-portrait{
 
-    height: 480px;
-    width: 430px;
+    height: 460px;
+    width: 410px;
     position: absolute;
-    left: 80%;
+    left: 82%;
     bottom: 90px;
     transform: translateX(-60%);
     transition: bottom 1s,left 1s;
@@ -116,7 +133,7 @@ p{
 }
 
 
-
+/*ABOUT*/
 #About {
     height: auto;
     display: flex;
@@ -639,5 +656,146 @@ footer{
 }
 
 
+/*RESPONSIVE*/
+@media all and (min-width: 320px) and (max-width:769px) {
 
+
+    h3{
+        font-size: 25px;
+        font-family: Inter;
+        margin-bottom: 10px;
+        padding-top: 15px;
+    }
+    h4{
+        font-size: 20px;
+        font-family: Inter;
+    }
+    h5{
+        font-size: 15px;
+        font-family: Gideon Roman;
+    }
+    h1{
+        font-size: 45px;
+        font-family: Kaisei Opti;
+        margin-bottom: 15px;
+        padding: 20px;
+    }
+    h2{
+        font-size: 35px;
+        font-family: Inter;
+    }
+    p{
+        font-family: Inter;
+        font-size: 100%;
+        padding: 20px;
+    }
+
+    /*navigation bar*/
+    .navbar {
+        width: 100%;
+        height: 50px;
+    }
+
+
+    nav ul {
+        float: none;
+        position: fixed;
+        z-index: 9;
+        left: -100%;
+        right: 0;
+        top: 50px;
+        bottom: 100%;
+        width: 30%;
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgba(153, 204, 255, .8);
+        overflow: hidden;
+        transition: all .5s ease-in-out;
+    }
+
+    nav .icon-b{
+        display: block;
+    }
+    #check{
+        display: none;
+    }
+
+    nav ul li a {
+        color: black;
+        font-size: 18px;
+    }
+
+    .icon-b :checked ~ ul{
+        bottom: 0;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+
+    ul li {
+        color: black;
+    }
+
+    nav ul li a:hover {
+        color: #f54750;
+    }
+
+    /* Home */
+    .container{
+        position: relative;
+    }
+    .home-portrait{
+        position: absolute;
+        left: 65%;
+        margin: auto;
+        bottom: 230px;
+        width: 365px;
+        height: 383px;
+    }
+    .profile{
+        /*bottom: 130px;*/
+        margin: auto;
+        /*position: absolute;*/
+        /*right: 55px*/
+    }
+    .container p{
+        position: absolute;
+        display: flex;
+        align-items: flex-end;
+        bottom: 0%;
+    }
+/*    About*/
+    #About h1{
+        justify-items: center;
+        position: center;
+    }
+    #about-portrait{
+        position: absolute;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+}
+
+
+
+
+
+@media all and (min-width:769px) and (max-width:1024px) {
+
+    /*navigation bar*/
+    nav ul li {
+        padding: 15px 15px;
+        display: inline-block;
+        list-style-type: none;
+        height: 100%;
+    }
+
+    nav ul li a {
+        color: #333;
+        font-size: medium;
+    }
+}
 
