@@ -76,6 +76,10 @@ nav .icon-b .lines{
     height: 100vh;
 }
 
+.home-p{
+    font-size: 25px;
+}
+
 
 .container{
     margin-left: 8%;
@@ -657,17 +661,17 @@ footer{
 
 
 /*RESPONSIVE*/
-@media all and (min-width: 320px) and (max-width:769px) {
+@media all and (min-width: 320px)  and (max-width:426px ){
 
 
     h3{
-        font-size: 25px;
+        font-size: 21px;
         font-family: Inter;
         margin-bottom: 10px;
         padding-top: 15px;
     }
     h4{
-        font-size: 20px;
+        font-size: 19px;
         font-family: Inter;
     }
     h5{
@@ -675,13 +679,13 @@ footer{
         font-family: Gideon Roman;
     }
     h1{
-        font-size: 45px;
+        font-size: 35px;
         font-family: Kaisei Opti;
         margin-bottom: 15px;
-        padding: 20px;
+        padding: 3px;
     }
     h2{
-        font-size: 35px;
+        font-size: 25px;
         font-family: Inter;
     }
     p{
@@ -746,35 +750,95 @@ footer{
     .container{
         position: relative;
     }
+    .container{
+        font-size: 10px;
+    }
     .home-portrait{
         position: absolute;
-        left: 65%;
+        left: 56%;
         margin: auto;
         bottom: 230px;
         width: 365px;
         height: 383px;
     }
-    .profile{
-        /*bottom: 130px;*/
-        margin: auto;
-        /*position: absolute;*/
-        /*right: 55px*/
+    #profile>img{
+        width: 263px;
+        height: 264px;
+
     }
-    .container p{
-        position: absolute;
-        display: flex;
-        align-items: flex-end;
-        bottom: 0%;
+    .home-p{
+        position: relative;
+        font-size: 18px;
+        top:268px;
     }
+    /*.container p{*/
+    /*    position: absolute;*/
+    /*    display: flex;*/
+    /*    align-items: flex-end;*/
+    /*    bottom: 0%;*/
+    /*}*/
 /*    About*/
-    #About h1{
-        justify-items: center;
-        position: center;
+    #About{
+        height: 1049px;
     }
-    #about-portrait{
-        position: absolute;
-        display: flex;
-        justify-content: flex-end;
+    .about-title{
+        text-align: center;
+        position: relative;
+        left: 0;
+    }
+    /*#about-portrait{*/
+    /*    position: absolute;*/
+    /*    display: flex;*/
+    /*    justify-content: flex-end;*/
+    /*}*/
+    #about-container>img{
+        height: 327px;
+        width: 273px;
+        left: -17px;
+        top: 768px;
+    }
+    #about-container{
+        height: auto;
+    }
+    #about-text{
+        margin-right: 0;
+    }
+/*    Education*/
+    #Education{
+        display: block;
+    }
+    .details{
+        width: 309px;
+        margin-bottom: 20px;
+    }
+    #Education h5{
+        width: 232px;
+        left: 40px;
+        position: relative;
+    }
+    .details-data{
+        padding-top: 10px;
+    }
+    .edu-scl{
+        width:100%;
+    }
+    .star{
+        display: none;
+    }
+.sub-class{
+    margin-left: 15px;
+}
+#skill-img{
+    display: contents;
+
+}
+/*Services*/
+    #categoryS{
+        display: contents;
+    }
+    .box{
+        margin-left: 27px;
+        margin-bottom: 22px;
     }
 
 }
@@ -783,19 +847,19 @@ footer{
 
 
 
-@media all and (min-width:769px) and (max-width:1024px) {
+/*@media all and (min-width:769px) and (max-width:1024px) {*/
 
-    /*navigation bar*/
-    nav ul li {
-        padding: 15px 15px;
-        display: inline-block;
-        list-style-type: none;
-        height: 100%;
-    }
+/*    !*navigation bar*!*/
+/*    nav ul li {*/
+/*        padding: 15px 15px;*/
+/*        display: inline-block;*/
+/*        list-style-type: none;*/
+/*        height: 100%;*/
+/*    }*/
 
-    nav ul li a {
-        color: #333;
-        font-size: medium;
-    }
-}
+/*    nav ul li a {*/
+/*        color: #333;*/
+/*        font-size: medium;*/
+/*    }*/
+/*}*/
 
