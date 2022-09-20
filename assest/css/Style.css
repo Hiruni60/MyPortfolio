@@ -840,6 +840,48 @@ footer{
         margin-left: 27px;
         margin-bottom: 22px;
     }
+    .plans{
+        display: contents;
+    }
+    .pBox{
+        margin-left: 27px;
+        margin-bottom: 22px;
+    }
+/*    PROJECTS*/
+
+.backBtn{
+    width: 39px;
+    height: 48px;
+}
+.hotelProj{
+    width: 216px;
+    height: 186px;
+}
+.download{
+    margin-left: 110px;
+}
+.keelsSMarketProj{
+    width: 216px;
+    height: 186px;
+}
+.nextBtn{
+    width: 39px;
+    height: 48px;
+}
+.middleC{
+    display: block;
+    margin-left: 55px;
+    margin-right: 55px;
+}
+.middleC div{
+    display: block;
+}
+
+
+/*CONTACT*/
+    .topic{
+        left: 23%;
+    }
 
 }
 
