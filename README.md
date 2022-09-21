@@ -18,4 +18,6 @@ Wire Frame URL - https://wireframe.cc/Tx4k2ohttps://wireframe.cc/Tx4k2o
 
 Mock Up URL - https://www.figma.com/file/9kHYOHd54CcTPvlLOFENW5/pos-system?node-id=0%3A1
 
-<img src="">
+
+
+<img src="https://github.com/Hiruni60/MyPortfolio/blob/master/assest/2022-09-21.png">
