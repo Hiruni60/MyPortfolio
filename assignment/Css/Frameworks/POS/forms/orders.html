@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--  <link rel="stylesheet" href="../../../../../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">-->
+  <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=Public+Sans:wght@600&family=Raleway:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
+  <style>
+    body {
+      background-color: #FAE6E9;
+      height: 100vh;
+    }
+
+    * {
+      font-family: 'Poppins', Sans-serif;
+      font-style: normal;
+      font-weight: 600;
+
+    }
+
+    main > h1 {
+      font-family: 'Poppins', Sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 43px;
+    }
+  </style>
+</head>
+<body>
+
+<main class="container mt-5">
+  <div class="position-absolute ">
+    <button class="btn btn-primary bg-transparent border-0" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i
+            class="fa-solid fa-bars text-dark " style="font-size:30px;"></i></button>
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+         aria-labelledby="offcanvasWithBothOptionsLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link " href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="customers.html">Customers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="items.html">Items</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="orders.html">Order</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <h1 class="ms-5 position-relative" style="bottom: 3px; left: 10px;">ORDERS</h1>
+  <section class="row">
+
+    <div class="row col-sm-12 col-4 col-lg-5 mt-5 ms-3 col-xl-4">
+      <h4 class="rounded-3 p-2 bg-opacity-25 bg-success" style="border: 1px solid black; height: max-content; margin: 0;">Invoice Details</h4>
+
+      <div class="col-6">
+        <div class="form-floating input-group mt-1 ">
+          <input type="text" class="form-control bg-transparent " id="invoiceID" placeholder="O00-001">
+          <label for="invoiceID">Invoice ID</label>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="form-floating input-group mt-1 ">
+          <input type="date" class="form-control bg-transparent " id="floatingInput">
+          <label for="floatingInput">Invoice Date</label>
+        </div>
+      </div>
+
+      <div class=" col-6 mt-4 mb-5 ">
+        <select class="form-select bg-transparent " aria-label="Default select example">
+          <option selected class="col-6">Customer</option>
+          <option value="1">C00-001</option>
+          <option value="2">C00-002</option>
+        </select>
+      </div>
+
+      <div class="col-6">
+        <div class="form-floating input-group mt-1 ">
+          <input type="text" class="form-control bg-transparent " id="customerName2" placeholder="Hiruni">
+          <label for="customerName2">Customer Name</label>
+        </div>
+      </div>
+
+
+      <div class="col-12">
+        <div class="form-floating input-group mt-1 mb-3">
+          <input type="text" class="form-control bg-transparent " id="customerAddress2" placeholder="Hiruni">
+          <label for="customerAddress2">Customer Address</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row col-sm-12 col-4 col-lg-5 mt-5 ms-3 col-xl-4 justify-content-end">
+      <h4 class="rounded-3 p-2 bg-opacity-25 bg-success" style="border: 1px solid black; height: max-content; margin: 0;">Select Items</h4>
+      <div class=" col-6 mt-4 mb-5 ">
+        <select class="form-select bg-transparent " aria-label="Default select example">
+          <option selected class="col-6">Item</option>
+          <option value="1">I00-001</option>
+          <option value="2">I00-002</option>
+        </select>
+      </div>
+      <div class="col-6">
+        <div class="form-floating input-group mt-1 ">
+          <input type="text" class="form-control bg-transparent " id="itemName" placeholder="Item Name">
+          <label for="itemName">Item Name</label>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="form-floating input-group mt-1 mb-3">
+          <input type="text" class="form-control bg-transparent " id="itemDescription" placeholder="Hiruni">
+          <label for="itemDescription">Item Description</label>
+        </div>
+      </div>
+
+      <div class="col-6">
+        <div class="form-floating input-group mt-1 ">
+          <input type="text" class="form-control bg-transparent " id="unitPrice" placeholder="Unit Price">
+          <label for="unitPrice">Unit Price</label>
+        </div>
+      </div>
+
+
+      <div class="col-6">
+        <div class="form-floating input-group mt-1 ">
+          <input type="text" class="form-control bg-transparent " id="QtyOnHand" placeholder="Hiruni">
+          <label for="QtyOnHand">Qty On Hand</label>
+        </div>
+      </div>
+      <button type="button" class="btn btn-success col-4 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Add To Cart</button>
+    </div>
+
+    <div class="row col-sm-12  col-lg-6 col-xl-3 justify-content-center align-items-center ms-3 position-relative" style="top: 40px;">
+      <h4 class="col-5">Sub-Total:</h4>
+      <h4 class="col-5 text-danger text-start">160000</h4>
+
+      <div class="col-12">
+        <div class="form-floating input-group">
+          <input type="text" class="form-control bg-transparent " id="cash" placeholder="Hiruni">
+          <label for="cash">Cash</label>
+        </div>
+      </div>
+
+      <div class="col-12">
+        <div class="form-floating input-group  ">
+          <input type="text" class="form-control bg-transparent " id="discount" placeholder="Hiruni">
+          <label for="discount">Discount</label>
+        </div>
+      </div>
+
+      <h4 class="col-5">Total:</h4>
+      <h4 class="col-5 text-danger text-start">150000</h4>
+
+      <h4 class="col-5">Balance:</h4>
+      <h4 class="col-5 text-danger text-success">1000</h4>
+
+      <button type="button" class="btn btn-dark col-10 " data-bs-toggle="modal" data-bs-target="#exampleModal">Place Order</button>
+    </div>
+  </section>
+
+  <section class="row mt-sm-2 ">
+
+    <div class="col-12 mt-5">
+      <table class="table mt-3 table-hover">
+        <thead class="" style="border-radius: 5px; background-color: #F18789;">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Item Code</th>
+          <th scope="col">Item Name</th>
+          <th scope="col">Item Description</th>
+          <th scope="col">Unit Price</th>
+          <th scope="col">Qty</th>
+          <th scope="col">Cost</th>
+          <th scope="col">Option</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>I00-001</td>
+          <td>Coca-Cola</td>
+          <td>Bevarage</td>
+          <td>160</td>
+          <td>1000</td>
+          <td>160000</td>
+          <td> <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button></td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>I00-002</td>
+          <td>Cashuew</td>
+          <td>Nutrition</td>
+          <td>200</td>
+          <td>2000</td>
+          <td>400000</td>
+          <td> <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+</main>
+<script src="../assets/js/bootstrap.min.js"></script>
+
+</body>
+</html>

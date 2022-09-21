@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <link rel="stylesheet" href="../../../../assets/fonts/fontawesome-free-6.1.2-web/css/all.min.css">-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=Public+Sans:wght@600&family=Raleway:wght@500;600;700;800;900&display=swap"
+          rel="stylesheet">
+    <style>
+        body {
+            background-color: #8FC3BA;
+            height: 100vh;
+        }
+
+
+        header > nav > div > a {
+            font-family: 'Public Sans', Sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 63px !important;
+            line-height: 70px;
+            text-align: right;
+            width: 300px;
+            height: max-content;
+            color: #000000;
+        }
+
+        header > nav > div > ul > li > a {
+            text-decoration: none;
+            color: #000000 !important;
+        }
+
+        header > nav > div > ul > li {
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 18px;
+            color: #000000 !important;
+        }
+
+        header > nav > div > ul > li > a > i {
+            padding-right: 10px;
+        }
+        main > section > a  {
+            height: 60%;
+            color: #000000 !important;
+        }
+        main > section > a > div {
+            height: 100%;
+        }
+
+        main > section > a:nth-of-type(1) > div > div {
+            background: url("assets/images/big-discount-shopping-3d-illustration-concept_380580-274.jpg") center;
+            background-size: cover;
+            height: 300px;
+            width: 300px;
+            transition-property: height, width;
+            transition-duration: 0.5s;
+            position: relative;
+            top: 50px;
+        }
+
+        main > section > a:nth-of-type(1) > div > div:hover {
+            height: 135%;
+            width: 125%;
+            transition-property: height, width;
+            transition-duration: 0.3s;
+        }
+
+        main > section > a:nth-of-type(2) > div > div {
+            background: url("assets/images/order-processing-4018999-3334538.webp") center;
+            background-size: cover;
+            height: 300px;
+            width: 300px;
+            transition-property: height, width;
+            transition-duration: 0.5s;
+            position: relative;
+            top: 50px;
+        }
+
+        main > section > a:nth-of-type(2) > div > div:hover {
+            height: 115%;
+            width: 115%;
+            transition-property: height, width;
+            transition-duration: 0.3s;
+        }
+
+        main > section > a:nth-of-type(3) > div > div {
+            background: url("assets/images/grocery-package-5293483-4428753.webp") center;
+            background-size: cover;
+            height: 300px;
+            width: 300px;
+            transition-property: height, width;
+            transition-duration: 0.5s;
+            position: relative;
+            top: 50px;
+        }
+
+        main > section > a:nth-of-type(3) > div > div:hover {
+            height: 105%;
+            width: 123%;
+            transition-property: height, width;
+            transition-duration: 0.3s;
+        }
+
+        main > section > a > div > h4 {
+            font-family: 'Poppins', sans-serif;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 25px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<header class="position-relative top-0 justify-content-sm-center">
+    <nav class="navbar" style="background-color: #FAE6E9;">
+        <!-- Navbar content -->
+        <div class="container  justify-content-sm-end" >
+
+            <ul class="nav justify-content-end justify-content-sm-end">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html"><i class="fa-solid fa-house"></i>Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="forms/customers.html"><i
+                            class="fa-solid fa-user"></i>Customers</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="forms/items.html"><i class="fa-solid fa-box"></i>Items</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="forms/orders.html"><i class="fa-solid fa-cart-shopping"></i>Orders</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</header>
+<main class="container  justify-content-center">
+    <section class="row mt-sm-5  mt-md-5 justify-content-center ">
+        <a href="forms/customers.html" class="col-xxl-3 col-xl-4 col-lg-8 col-md-7 col-sm-9 align-self-center m-3 position-relative">
+            <div class="col-12 position-relative " style="background-color: #F0A762;">
+                <div class="position-absolute bottom-0 start-0"></div>
+                <h4 class=" col-6 position-absolute top-100 start-0 text-start ">CUSTOMERS</h4>
+                <h4 class=" col-6 position-absolute top-100 end-0 text-end "> > </h4>
+            </div>
+        </a>
+        <a href="forms/orders.html" class="col-xxl-3 col-xl-4 col-lg-8 col-md-7 col-sm-9 align-self-center m-3 position-relative">
+            <div class=" col-12 position-relative"
+                 style="background-color: #3D8B90;">
+                <div class=" position-absolute bottom-0 end-0"></div>
+                <h4 class=" col-6 position-absolute top-100 start-0 text-start ">ORDER</h4>
+                <h4 class=" col-6 position-absolute top-100 end-0 text-end "> > </h4>
+            </div>
+        </a>
+        <a href="forms/items.html" class="col-xxl-3 col-xl-4 col-lg-8 col-md-7 col-sm-9 align-self-center  m-3 position-relative">
+            <div class="col-12 position-relative" style="background-color: #E58D8D;">
+                <div class=" position-absolute end-0 bottom-0 col-lg-6"></div>
+                <h4 class=" col-6 position-absolute top-100 start-0 text-start ">ITEMS</h4>
+                <h4 class=" col-6 position-absolute top-100 end-0 text-end "> > </h4>
+            </div>
+        </a>
+    </section>
+</main>
+<script src="assets/js/bootstrap.min.js"></script>
+</body>
+</html>
