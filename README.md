@@ -20,4 +20,4 @@ Mock Up URL - https://www.figma.com/file/9kHYOHd54CcTPvlLOFENW5/pos-system?node-
 
 
 
-<img src="https://github.com/Hiruni60/MyPortfolio/blob/master/assest/2022-09-21.png">
+
