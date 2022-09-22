@@ -44,6 +44,10 @@
         header > nav > div > ul > li > a > i {
             padding-right: 10px;
         }
+        main > section {
+            height: 500px;
+            flex-wrap: unset !important;
+        }
         main > section > a  {
             height: 60%;
             color: #000000 !important;
@@ -56,16 +60,16 @@
             background: url("assets/images/big-discount-shopping-3d-illustration-concept_380580-274.jpg") center;
             background-size: cover;
             height: 300px;
-            width: 300px;
+            width: 250px;
             /*transition-property: height, width;*/
             /*transition-duration: 0.5s;*/
             position: relative;
-            top: 50px;
+            top: 0;
         }
 
         main > section > a:nth-of-type(1) > div > div:hover {
             /*height: 135%;*/
-            width: 110%;
+            width: 95%;
             transition-property: height, width;
             transition-duration: 0.5s;
         }
@@ -74,16 +78,16 @@
             background: url("assets/images/order-processing-4018999-3334538.webp") center;
             background-size: cover;
             height: 300px;
-            width: 300px;
+            width: 250px;
             /*transition-property: height, width;*/
             /*transition-duration: 0.5s;*/
             position: relative;
-            top: 50px;
+            top: 0;
         }
 
         main > section > a:nth-of-type(2) > div > div:hover {
             /*height: 115%;*/
-            width: 110%;
+            width: 95%;
             transition-property: height, width;
             transition-duration:0.5s;
         }
@@ -92,16 +96,16 @@
             background: url("assets/images/grocery-package-5293483-4428753.webp") center;
             background-size: cover;
             height: 300px;
-            width: 300px;
+            width: 250px;
             /*transition-property: height, width;*/
             /*transition-duration: 0.5s;*/
             position: relative;
-            top: 50px;
+            top: 0;
         }
 
         main > section > a:nth-of-type(3) > div > div:hover {
             /*height: 105%;*/
-            width: 110%;
+            width: 95%;
             transition-property: height, width;
             transition-duration: 0.5s;
         }
@@ -144,26 +148,25 @@
     </nav>
 </header>
 <main class="container  justify-content-center">
-
-    <section class="row mt-sm-5  mt-md-5 justify-content-center ">
-        <a href="forms/customers.html" class="col-xxl-3 col-xl-4 col-lg-8 col-md-7 col-sm-9 align-self-center m-3 position-relative">
-            <div class="col-12 position-relative " style="background-color: #F0A762;">
+    <section class="row mt-sm-5  mt-md-5 justify-content-center border">
+        <a href="forms/customers.html" class="col-xxl-3 col-xl-4 col-lg-8 col-md-7 col-sm-9 align-self-center m-0 position-relative">
+            <div class="col-12 position-relative " style="background-color: transparent;">
                 <div class="position-absolute bottom-0 start-0"></div>
                 <h4 class=" col-6 position-absolute top-100 start-0 text-start ">CUSTOMERS</h4>
                 <h4 class=" col-6 position-absolute top-100 end-0 text-end "> > </h4>
             </div>
         </a>
-        <a href="forms/orders.html" class="col-xxl-3 col-xl-4 col-lg-8 col-md-7 col-sm-9 align-self-center m-3 position-relative">
+        <a href="forms/orders.html" class="col-xxl-3 col-xl-4 col-lg-8 col-md-7 col-sm-9 align-self-center m-0 position-relative">
             <div class=" col-12 position-relative"
-                 style="background-color: #3D8B90;">
-                <div class=" position-absolute bottom-0 end-0"></div>
+                 style="background-color: transparent;">
+                <div class=" position-absolute bottom-0 start-0"></div>
                 <h4 class=" col-6 position-absolute top-100 start-0 text-start ">ORDER</h4>
                 <h4 class=" col-6 position-absolute top-100 end-0 text-end "> > </h4>
             </div>
         </a>
-        <a href="forms/items.html" class="col-xxl-3 col-xl-4 col-lg-8 col-md-7 col-sm-9 align-self-center  m-3 position-relative">
-            <div class="col-12 position-relative" style="background-color: #E58D8D;">
-                <div class=" position-absolute end-0 bottom-0 col-lg-6"></div>
+        <a href="forms/items.html" class="col-xxl-3 col-xl-4 col-lg-8 col-md-7 col-sm-9 align-self-center  m-0 position-relative">
+            <div class="col-12 position-relative" style="background-color: transparent; border: medium;" >
+                <div class=" position-absolute start-0 bottom-0 col-lg-6"></div>
                 <h4 class=" col-6 position-absolute top-100 start-0 text-start ">ITEMS</h4>
                 <h4 class=" col-6 position-absolute top-100 end-0 text-end "> > </h4>
             </div>
