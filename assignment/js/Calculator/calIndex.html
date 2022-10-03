@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="calStyle.css">
+    <style>
+        .cal_container{
+            max-width: 480px;
+            margin: 10vh auto 0 auto;
+            box-shadow: 0px 0px 43px 17px rgb(100, 100, 1);
+        }
+        #display{
+            background-color: cornflowerblue;
+            padding-top: 20px;
+            padding-right: 10px;
+            text-align: right;
+            width: 350px;
+            float: right;
+            height: 50px;
+            font-size: 25px;
+        }
+        .button_c{
+            height: 50px;
+            width: 120px;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .buttons{
+            display: grid;
+            border-bottom: 1px solid #999;
+            border-left: 1px solid #999;
+            grid-template-columns: 120px 120px 120px 120px ;
+        }
+        .buttons > div{
+            border-top: 1px solid #999;
+            border-right: 1px solid #999;
+        }
+        .button{
+            border: 0.5px solid #999;
+            line-height: 100px;
+            text-align: center;
+            font-size: 25px;
+            cursor: pointer;
+        }
+        #equal{
+            background-color: mediumpurple;
+            color: white;
+        }
+        .button:hover{
+            background-color: indianred;
+            color: white;
+            transition: 0.5s ease-in-out;
+        }
+        .button_c:hover{
+            background-color: indianred;
+            color: white;
+            transition: 0.5s ease-in-out;
+        }
+
+    </style>
+</head>
+<body>
+    <section class="cals">
+        <div class="cal_container">
+            <div id="display"></div>
+            <div class="btn">
+                <div class="button_c">C</div>
+            </div>
+            <div class="buttons">
+
+                <div class="button">7</div>
+                <div class="button">8</div>
+                <div class="button">9</div>
+                <div class="button">+</div>
+
+                <div class="button">4</div>
+                <div class="button">5</div>
+                <div class="button">6</div>
+                <div class="button">-</div>
+
+                <div class="button">1</div>
+                <div class="button">2</div>
+                <div class="button">3</div>
+                <div class="button">/</div>
+
+                <div class="button">0</div>
+                <div class="button">.</div>
+                <div id="equal" class="button">=</div>
+                <div class="button">*</div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+       let display = document.getElementById('display');
+
+       let buttons = Array.from(document.getElementsByClassName('button'));
+       let btn = Array.from(document.getElementsByClassName('button_c'));
+
+       btn.map(button_c =>{
+           button_c.addEventListener('click', (e) => {
+               switch (e.target.innerText) {
+                   case 'C':
+                       display.innerText ='';
+                       break;
+               }
+           })
+       })
+
+       buttons.map(button =>{
+            button.addEventListener('click', (e) => {
+                switch (e.target.innerText){
+                    case '=':
+                        try {
+                            display.innerText = eval(display.innerText);
+                        }catch {
+                            display.innerText = 'Error'
+                        }
+
+                        break;
+                    default:
+                        display.innerText += e.target.innerText;
+                }
+            })
+
+       })
+    </script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery-3.4.1.min.js"></script>
+</body>
+</html>
