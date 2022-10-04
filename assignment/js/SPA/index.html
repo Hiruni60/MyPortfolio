@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="./assest/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-color: #8FC3BA;
+      height: 100vh;
+    }
+    #navbar{
+      font-family: 'Play';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 35px !important;
+      line-height: 40px;
+      text-align: right;
+      width: auto;
+      height: auto;
+      color: #000000;
+      background-color: #8FC3BA;
+      margin-left: 983px;
+    }
+    main > section {
+      height: 500px;
+      flex-wrap: unset !important;
+
+    }
+    main > section > a  {
+      height: 60%;
+      color: #000000 !important;
+    }
+    main > section > a > div {
+      height: 100%;
+    }
+
+    main > section > a:nth-of-type(1) > div > div {
+      background: url("assest/images/big-discount-shopping-3d-illustration-concept_380580-274.jpg") center;
+      background-size: cover;
+      height: 300px;
+      width: 250px;
+      /*transition-property: height, width;*/
+      /*transition-duration: 0.5s;*/
+      position: relative;
+      top: 0;
+    }
+
+    main > section > a:nth-of-type(1) > div > div:hover {
+      /*height: 135%;*/
+      width: 95%;
+      transition-property: height, width;
+      transition-duration: 0.5s;
+    }
+
+    main > section > a:nth-of-type(2) > div > div {
+      background: url("assest/images/order-processing-4018999-3334538.webp") center;
+      background-size: cover;
+      height: 300px;
+      width: 250px;
+      /*transition-property: height, width;*/
+      /*transition-duration: 0.5s;*/
+      position: relative;
+      top: 0;
+    }
+
+    main > section > a:nth-of-type(2) > div > div:hover {
+      /*height: 115%;*/
+      width: 95%;
+      transition-property: height, width;
+      transition-duration:0.5s;
+    }
+
+    main > section > a:nth-of-type(3) > div > div {
+      background: url("assest/images/grocery-package-5293483-4428753.webp") center;
+      background-size: cover;
+      height: 300px;
+      width: 250px;
+      /*transition-property: height, width;*/
+      /*transition-duration: 0.5s;*/
+      position: relative;
+      top: 0;
+    }
+
+    main > section > a:nth-of-type(3) > div > div:hover {
+      /*height: 105%;*/
+      width: 95%;
+      transition-property: height, width;
+      transition-duration: 0.5s;
+    }
+
+    main > section > a > div > h4 {
+      font-family: 'Marcellus';
+      font-style: normal;
+      font-weight: 600;
+      font-size: 26px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg bg-light fixed-top" id="navbar">
+    <div class="container-fluid ">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link" onclick="navigate('dashboard')">Home</a>
+          <a class="nav-link" onclick="navigate('customerForm')">Customers</a>
+          <a class="nav-link" onclick="navigate('itemForms')">Items</a>
+          <a class="nav-link" onclick="navigate('ordersForms')">Orders</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+<main class="container  justify-content-center" style="margin-top: 150px">
+  <section class="row mt-sm-5  mt-md-5 justify-content-center border" id="dashboard">
+    <a onclick="navigate('customerForm')" class="col-xxl-3 col-xl-4 col-lg-8 col-md-7 col-sm-9 align-self-center m-0 position-relative">
+      <div class="col-12 position-relative " style="background-color: transparent;">
+        <div class="position-absolute bottom-0 start-0"></div>
+        <h4 class=" col-6 position-absolute top-100 start-0 text-start ">CUSTOMERS</h4>
+        <h4 class=" col-6 position-absolute top-100 end-0 text-end "> > </h4>
+      </div>
+    </a>
+    <a onclick="navigate('ordersForms')" class="col-xxl-3 col-xl-4 col-lg-8 col-md-7 col-sm-9 align-self-center m-0 position-relative">
+      <div class=" col-12 position-relative"
+           style="background-color: transparent;">
+        <div class=" position-absolute bottom-0 start-0"></div>
+        <h4 class=" col-6 position-absolute top-100 start-0 text-start ">ORDER</h4>
+        <h4 class=" col-6 position-absolute top-100 end-0 text-end "> > </h4>
+      </div>
+    </a>
+    <a onclick="navigate('itemForms')" class="col-xxl-3 col-xl-4 col-lg-8 col-md-7 col-sm-9 align-self-center  m-0 position-relative">
+      <div class="col-12 position-relative" style="background-color: transparent; border: medium;" >
+        <div class=" position-absolute start-0 bottom-0 col-lg-6"></div>
+        <h4 class=" col-6 position-absolute top-100 start-0 text-start ">ITEMS</h4>
+        <h4 class=" col-6 position-absolute top-100 end-0 text-end "> > </h4>
+      </div>
+    </a>
+  </section>
+  <section id="customerForm" class="collapse">
+    <h1 class="ms-5 position-relative" style="bottom: 3px; left: 5px; margin-top: 80px"><u>CUSTOMERS</u></h1>
+    <section class="row">
+      <div class="col-sm-12 col-4 col-lg-5 mt-5 col-xl-4">
+        <h4 class="rounded-3 p-2 bg-opacity-25 bg-success"
+            style="  border: 1px solid black;">Search Customer</h4>
+
+        <div class=" col-7 mt-4 mb-3 ">
+          <select class="form-select bg-transparent " aria-label="Default select example">
+            <option selected class="col-8">Select Name/NIC/Code</option>
+            <option value="1">Name</option>
+            <option value="2">NIC</option>
+            <option value="3">Code</option>
+          </select>
+        </div>
+
+        <div class="form-floating input-group mt-1 mb-3 col-10">
+          <input type="email" class="form-control bg-transparent" id="floatingInput" placeholder="200072501233">
+          <label for="floatingInput">Customer Name/NIC/Code</label>
+          <button class="btn btn-outline-secondary text-dark bg-opacity-75" type="button" id="button-addon2"
+                  style="background-color: #905FCAC7">Search
+          </button>
+        </div>
+        <button type="button" class="btn btn-danger  me-2">Delete</button>
+        <button type="button" class="btn btn-warning me-2">Update</button>
+        <button type="button" class="btn btn-success me-2">Clear</button>
+      </div>
+
+      <div class="row col-sm-12 col-6 col-lg-6 col-xl-6">
+
+        <div class="col-6 position-relative " style="top:40px; left: 480px;">
+          <h5>Customer Code</h5>
+          <h6 class="text-muted">C00-001</h6>
+
+          <h5>Customer Name</h5>
+          <h6 class="text-muted">Hiruni Piumika</h6>
+
+          <h5>Customer NIC</h5>
+          <h6 class="text-muted">200072501233</h6>
+
+          <h5>Customer DOB</h5>
+          <h6 class="text-muted">2000/08/12</h6>
+
+          <h5>Customer Address</h5>
+          <h6 class="text-muted">Weligama</h6>
+
+          <h5>Customer Salary</h5>
+          <h6 class="text-muted">25000</h6>
+        </div>
+      </div>
+
+      <div class="col-sm-5 col-2 col-xl-2">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-dark col-sm-12" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Add Customer</button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Customer</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <section class="container">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="customerCode" placeholder="C00-001">
+                    <label for="customerCode">Customer Code</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="customerName" placeholder="Hiruni Piumika">
+                    <label for="customerName">Customer Name</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="customerNIC" placeholder="200072501233">
+                    <label for="customerNIC">Customer NIC</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="date" class="form-control" id="customerDOB" placeholder="Hiruni Piumika">
+                    <label for="customerDOB">Customer DOB</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="customerAddress" placeholder="Weligama">
+                    <label for="customerAddress">Customer Address</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="customerSalary" placeholder="25000">
+                    <label for="customerSalary">Customer Salary</label>
+                  </div>
+                </section>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Save Customer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="row mt-sm-2">
+      <div class="col-12   text-sm-end text-lg-end ">
+        <button type="button" class="btn btn-primary text-sm-end ">View All Customers</button>
+      </div>
+      <div class="col-12 mt-5">
+        <table class="table mt-3 table-hover">
+          <thead class="" style="border-radius: 10px; background: rgba(55, 38, 39, 0.31)">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Customer Code</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Customer NIC</th>
+            <th scope="col">Customer DOB</th>
+            <th scope="col">Customer Address</th>
+            <th scope="col">Customer Salary</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>C00-001</td>
+            <td>Hiruni </td>
+            <td>200072501233</td>
+            <td>2000/08/12</td>
+            <td>Weligama</td>
+            <td>25000</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>C00-002</td>
+            <td>Chathu</td>
+            <td>199912354367</td>
+            <td>1999/09/16</td>
+            <td>Kananke</td>
+            <td>29000</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+  <section id="itemForms" class="collapse">
+    <h1 class="ms-5 position-relative" style="bottom: 3px; left: 5px; margin-top: 80px"><u>ITEMS</u></h1>
+    <section class="row">
+      <div class="col-sm-12 col-4 col-lg-5 mt-5 col-xl-4">
+        <h4 class="rounded-3 p-2 bg-opacity-25 bg-success"
+            style="  border: 1px solid black;">Search Item</h4>
+
+        <div class=" col-7 mt-4 mb-3 ">
+          <select class="form-select bg-transparent " aria-label="Default select example">
+            <option selected class="col-8">Item Code/Name</option>
+            <option value="1">Name</option>
+            <option value="3">Code</option>
+          </select>
+        </div>
+
+        <div class="form-floating input-group mt-1 mb-3 col-10">
+          <input type="email" class="form-control bg-transparent" id="floatingInput" placeholder="2000072501233">
+          <label for="floatingInput">Name</label>
+          <button class="btn btn-outline-secondary text-dark bg-opacity-75" type="button" id="button-addon2"
+                  style="background-color: #905FCAC7">Search
+          </button>
+        </div>
+        <button type="button" class="btn btn-danger  me-2">Delete</button>
+        <button type="button" class="btn btn-warning me-2">Update</button>
+        <button type="button" class="btn btn-success me-2">Clear</button>
+      </div>
+
+      <div class="row col-sm-12 col-6 col-lg-6 col-xl-6">
+        <div class="col-6 position-relative " style="top:40px; left: 480px;">
+          <h5>Item Code</h5>
+          <h6 class="text-muted">I00-001</h6>
+
+          <h5>Item Name</h5>
+          <h6 class="text-muted">Coca-Cola</h6>
+
+          <h5>Item Description</h5>
+          <h6 class="text-muted">Bevarage</h6>
+
+          <h5>Item Price</h5>
+          <h6 class="text-muted">160</h6>
+
+
+          <h5>Item Quntity</h5>
+          <h6 class="text-muted">1000</h6>
+
+        </div>
+
+      </div>
+
+      <div class="col-sm-5 col-2 col-xl-2">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-dark col-sm-12" data-bs-toggle="modal" data-bs-target="#exampleModal">+
+          Add Item
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Item</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <section class="container">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="itemCode" placeholder="I00-001">
+                    <label for="itemCode">Item Code</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="itemName" placeholder="Biscuits">
+                    <label for="itemName">Item Name</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="itemDescription"
+                           placeholder="Sample Description">
+                    <label for="itemDescription">Item Description</label>
+                  </div>
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="itemPrice" placeholder="160">
+                    <label for="itemPrice">Item Price</label>
+                  </div>
+
+                  <!--                <div class="form-floating mb-3">-->
+                  <!--                  <input type="text" class="form-control" id="itemSellingPrice" placeholder="Rs.20000/=">-->
+                  <!--                  <label for="itemSellingPrice">Item Selling-Price</label>-->
+                  <!--                </div>-->
+
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="itemQty" placeholder="1000">
+                    <label for="itemQty">Item Qty</label>
+                  </div>
+
+                </section>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Save Customer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="row mt-sm-2 ">
+      <div class="col-12   text-sm-end text-lg-end ">
+        <button type="button" class="btn btn-primary text-sm-end ">View All Items</button>
+      </div>
+      <div class="col-12 mt-5">
+        <table class="table mt-3 table-hover">
+          <thead class="" style="border-radius: 10px; background: rgba(55, 38, 39, 0.31)">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Item Code</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">Item Description</th>
+            <th scope="col">Item Price</th>
+            <th scope="col">Item Qty</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>I00-001</td>
+            <td>Coca-Cola</td>
+            <td>Bevarage</td>
+            <td>160</td>
+            <td>1000</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>I00-002</td>
+            <td>Cashuew</td>
+            <td>Nutrition</td>
+            <td>200</td>
+            <td>2000</td>
+          </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+  <section id="ordersForms" class="collapse">
+    <h1 class="ms-5 position-relative" style="bottom: 3px; left: 10px; margin-top: 80px"><u>ORDERS</u></h1>
+    <section class="row">
+
+      <div class="row col-sm-12 col-4 col-lg-5 mt-5 ms-3 col-xl-4">
+        <h4 class="rounded-3 p-2 bg-opacity-25 bg-success" style="border: 1px solid black; height: max-content; margin: 0;">Invoice Details</h4>
+
+        <div class="col-6">
+          <div class="form-floating input-group mt-1 ">
+            <input type="text" class="form-control bg-transparent " id="invoiceID" placeholder="O00-001">
+            <label for="invoiceID">Invoice ID</label>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form-floating input-group mt-1 ">
+            <input type="date" class="form-control bg-transparent " id="floatingInput">
+            <label for="floatingInput">Invoice Date</label>
+          </div>
+        </div>
+
+        <div class=" col-6 mt-4 mb-5 ">
+          <select class="form-select bg-transparent " aria-label="Default select example">
+            <option selected class="col-6">Customer</option>
+            <option value="1">C00-001</option>
+            <option value="2">C00-002</option>
+          </select>
+        </div>
+
+        <div class="col-6">
+          <div class="form-floating input-group mt-1 ">
+            <input type="text" class="form-control bg-transparent " id="customerName2" placeholder="Hiruni">
+            <label for="customerName2">Customer Name</label>
+          </div>
+        </div>
+
+
+        <div class="col-12">
+          <div class="form-floating input-group mt-1 mb-3">
+            <input type="text" class="form-control bg-transparent " id="customerAddress2" placeholder="Hiruni">
+            <label for="customerAddress2">Customer Address</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="row col-sm-12 col-4 col-lg-5 mt-5 ms-3 col-xl-4 justify-content-end">
+        <h4 class="rounded-3 p-2 bg-opacity-25 bg-success" style="border: 1px solid black; height: max-content; margin: 0;">Select Items</h4>
+        <div class=" col-6 mt-4 mb-5 ">
+          <select class="form-select bg-transparent " aria-label="Default select example">
+            <option selected class="col-6">Item</option>
+            <option value="1">I00-001</option>
+            <option value="2">I00-002</option>
+          </select>
+        </div>
+        <div class="col-6">
+          <div class="form-floating input-group mt-1 ">
+            <input type="text" class="form-control bg-transparent " id="itemName" placeholder="Item Name">
+            <label for="itemName">Item Name</label>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-floating input-group mt-1 mb-3">
+            <input type="text" class="form-control bg-transparent " id="itemDescription" placeholder="Hiruni">
+            <label for="itemDescription">Item Description</label>
+          </div>
+        </div>
+
+        <div class="col-6">
+          <div class="form-floating input-group mt-1 ">
+            <input type="text" class="form-control bg-transparent " id="unitPrice" placeholder="Unit Price">
+            <label for="unitPrice">Unit Price</label>
+          </div>
+        </div>
+
+
+        <div class="col-6">
+          <div class="form-floating input-group mt-1 ">
+            <input type="text" class="form-control bg-transparent " id="QtyOnHand" placeholder="Hiruni">
+            <label for="QtyOnHand">Qty On Hand</label>
+          </div>
+        </div>
+        <button type="button" class="btn btn-success col-4 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Add To Cart</button>
+      </div>
+
+      <div class="row col-sm-12  col-lg-6 col-xl-3 justify-content-center align-items-center ms-3 position-relative" style="top: 40px;">
+        <h4 class="col-5">Sub-Total:</h4>
+        <h4 class="col-5 text-danger text-start">160000</h4>
+
+        <div class="col-12">
+          <div class="form-floating input-group">
+            <input type="text" class="form-control bg-transparent " id="cash" placeholder="Hiruni">
+            <label for="cash">Cash</label>
+          </div>
+        </div>
+
+        <div class="col-12">
+          <div class="form-floating input-group  ">
+            <input type="text" class="form-control bg-transparent " id="discount" placeholder="Hiruni">
+            <label for="discount">Discount</label>
+          </div>
+        </div>
+
+        <h4 class="col-5">Total:</h4>
+        <h4 class="col-5 text-danger text-start">150000</h4>
+
+        <h4 class="col-5">Balance:</h4>
+        <h4 class="col-5 text-danger text-success">1000</h4>
+
+        <button type="button" class="btn btn-dark col-10 " data-bs-toggle="modal" data-bs-target="#exampleModal">Place Order</button>
+      </div>
+    </section>
+
+    <section class="row mt-sm-2 ">
+
+      <div class="col-12 mt-5">
+        <table class="table mt-3 table-hover">
+          <thead class="" style="border-radius: 10px;  background: rgba(55, 38, 39, 0.31);">
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Item Code</th>
+            <th scope="col">Item Name</th>
+            <th scope="col">Item Description</th>
+            <th scope="col">Unit Price</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Cost</th>
+            <th scope="col">Option</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>I00-001</td>
+            <td>Coca-Cola</td>
+            <td>Bevarage</td>
+            <td>160</td>
+            <td>1000</td>
+            <td>160000</td>
+            <td> <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button></td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>I00-002</td>
+            <td>Cashuew</td>
+            <td>Nutrition</td>
+            <td>200</td>
+            <td>2000</td>
+            <td>400000</td>
+            <td> <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </section>
+</main>
+
+<script src="./assest/js/bootstrap.min.js"></script>
+<script>
+ let panels = [$('#dashboard'),$('#customerForm'),$('#itemForms'),$('#ordersForms')];
+
+ function navigate(REF){
+    panels.forEach((panel) => {
+
+      if(REF === panel.attr("id")) {
+        panel.removeClass("collapse")
+      }else {
+        panel.addClass("collapse")
+      }
+    })
+ }
+
+</script>
+</body>
+</html>
