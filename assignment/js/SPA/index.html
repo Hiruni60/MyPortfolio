@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
   <link rel="stylesheet" href="./assest/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=Public+Sans:wght@600&family=Raleway:wght@500;600;700;800;900&display=swap"
+        rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <style>
     body {
@@ -197,11 +199,11 @@
         <button type="button" class="btn btn-dark col-sm-12" data-bs-toggle="modal" data-bs-target="#exampleModal">+ Add Customer</button>
 
         <!-- Modal -->
-        <div class="modal fade"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" >Add Customer</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Add Customer</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -289,6 +291,7 @@
       </div>
     </section>
   </section>
+
   <section id="itemForms" class="collapse">
     <h1 class="ms-5 position-relative" style="bottom: 3px; left: 5px; margin-top: 80px"><u>ITEMS</u></h1>
     <section class="row">
@@ -345,12 +348,12 @@
         </button>
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel"
              aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Add Item</h5>
+                <h5 class="modal-title" id="exampleModalLabel1">Add Item</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -361,12 +364,12 @@
                   </div>
 
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control"  placeholder="Biscuits">
+                    <input type="text" class="form-control" id="itemName" placeholder="Biscuits">
                     <label for="itemName">Item Name</label>
                   </div>
 
                   <div class="form-floating mb-3">
-                    <input type="text" class="form-control"
+                    <input type="text" class="form-control" id="itemDescription"
                            placeholder="Sample Description">
                     <label for="itemDescription">Item Description</label>
                   </div>
@@ -390,7 +393,7 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success">Save Customer</button>
+                <button type="button" class="btn btn-success">Save Item</button>
               </div>
             </div>
           </div>
@@ -494,14 +497,14 @@
         </div>
         <div class="col-6">
           <div class="form-floating input-group mt-1 ">
-            <input type="text" class="form-control bg-transparent " id="itemName" placeholder="Item Name">
+            <input type="text" class="form-control bg-transparent " id="itemName2" placeholder="Item Name">
             <label for="itemName">Item Name</label>
           </div>
         </div>
 
         <div class="col-12">
           <div class="form-floating input-group mt-1 mb-3">
-            <input type="text" class="form-control bg-transparent " id="itemDescription" placeholder="Hiruni">
+            <input type="text" class="form-control bg-transparent " id="itemDescription2" placeholder="Hiruni">
             <label for="itemDescription">Item Description</label>
           </div>
         </div>
