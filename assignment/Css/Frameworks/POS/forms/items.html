@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=Public+Sans:wght@600&family=Raleway:wght@500;600;700;800;900&display=swap"
         rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <style>
     body {
       background-color: #8FC3BA;
@@ -160,7 +161,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-success">Save Item</button>
+              <button type="button" class="btn btn-success" id="saveItem">Save Item</button>
             </div>
           </div>
         </div>
@@ -185,7 +186,7 @@
           <th scope="col">Item Qty</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="itemTbody">
         <tr>
           <th scope="row">1</th>
           <td>I00-001</td>
@@ -209,6 +210,34 @@
   </section>
 </main>
 <script src="../assets/js/bootstrap.min.js"></script>
+<script>
+  var itemArray=[]
 
+  function saveItems(){
+    let itemCode=$("#itemCode").val()
+    let itemName=$("#itemName").val()
+    let itemDes=$("#itemDescription").val()
+    let itemPrice=$("#itemPrice").val()
+    let itemQty=$("#itemQty").val()
+
+    var itemObjet={itemCode,itemName,itemDes,itemPrice,itemQty}
+
+    itemArray.push(itemObjet)
+    console.log(itemArray)
+  }
+
+  $("#saveItem").click(function (){
+    alert("Item Saved")
+    saveItems()
+    loadItem()
+  })
+
+  function loadItem(){
+    for(var i of itemArray){
+      var rawc=`<tr><th></th><td>${i.itemCode}</td><td>${i.itemName}</td><td>${i.itemDes}</td><td>${i.itemPrice}</td><td>${i.itemQty}</td></tr>`
+      $("#itemTbody").append(rawc)
+    }
+  }
+</script>
 </body>
 </html>
