@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=Public+Sans:wght@600&family=Raleway:wght@500;600;700;800;900&display=swap"
         rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
   <style>
     body {
       background-color: #8FC3BA;
@@ -155,7 +156,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-success">Save Customer</button>
+              <button type="button" class="btn btn-success" id="saveCus">Save Customer</button>
             </div>
           </div>
         </div>
@@ -181,7 +182,7 @@
           <th scope="col">Customer Salary</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="CusTbody">
         <tr>
           <th scope="row">1</th>
           <td>C00-001</td>
@@ -206,6 +207,37 @@
   </section>
 </main>
 <script src="../assets/js/bootstrap.min.js"></script>
+<!--<script src="/assignment/js/SPA/assest/jQuery/jquery-3.6.1.min.js"></script>-->
+<script>
+         var customerArray=[]
 
+         function saveCustomer(){
+           // var customerObject ={CustomerCode,CustomerName,CustomerNIC,CustomerDOB,CustomerAddress,CustomerSalary}
+
+           let CusCode=$("#customerCode").val()
+           let CusName=$("#customerName").val()
+           let CusNic=$("#customerNIC").val()
+           let CusDob=$("#customerDOB").val()
+           let CusAdd=$("#customerAddress").val()
+           let CusSalary=$("#customerSalary").val()
+
+           var customerObject ={CusCode,CusName,CusNic,CusDob,CusAdd,CusSalary}
+
+           customerArray.push(customerObject)
+           console.log(customerArray)
+
+         }
+    $("#saveCus").click(function (){
+      alert("Customer Saved")
+      saveCustomer()
+      loadCustomer()
+    })
+function loadCustomer(){
+  for(var i of customerArray){
+    var raw=`<tr><th></th><td>${i.CusCode}</td><td>${i.CusName}</td><td>${i.CusNic}</td><td>${i.CusDob}</td><td>${i.CusAdd}</td><td>${i.CusSalary}</td></tr>`
+    $("#CusTbody").append(raw)
+  }
+}
+</script>
 </body>
 </html>

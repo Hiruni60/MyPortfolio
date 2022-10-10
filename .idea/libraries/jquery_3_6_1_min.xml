@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="jquery-3.6.1.min" type="javaScript">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/assignment/js/SPA/assest/jQuery/jquery-3.6.1.min.js" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
