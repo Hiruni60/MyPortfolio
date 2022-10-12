@@ -312,15 +312,16 @@
         </div>
 
         <div class="form-floating input-group mt-1 mb-3 col-10">
-          <input type="email" class="form-control bg-transparent"  placeholder="2000072501233">
-          <label for="floatingInput">Name</label>
-          <button class="btn btn-outline-secondary text-dark bg-opacity-75" type="button" id="button-addon2"
-                  style="background-color: #905FCAC7">Search
-          </button>
+          <input type="email" class="form-control bg-transparent"  id="itemSearch" placeholder="2000072501233">
+          <label for="itemSearch">Name</label>
+<!--          <button class="btn btn-outline-secondary text-dark bg-opacity-75" type="button" id="button-addon2"-->
+<!--                  style="background-color: #905FCAC7">Search-->
+<!--          </button>-->
+            <button type="button" class="btn btn-outline-secondary text-dark bg-opacity-75" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #905FCAC7" id="searchIBtn">search</button>
         </div>
-        <button type="button" class="btn btn-danger  me-2">Delete</button>
-        <button type="button" class="btn btn-warning me-2">Update</button>
-        <button type="button" class="btn btn-success me-2">Clear</button>
+        <button type="button" class="btn btn-danger  me-2" id="deleteIBtn">Delete</button>
+<!--        <button type="button" class="btn btn-warning me-2">Update</button>-->
+        <button type="button" class="btn btn-success me-2" id="btnIClear">Clear</button>
       </div>
 
       <div class="row col-sm-12 col-6 col-lg-6 col-xl-6">
@@ -397,7 +398,8 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success">Save Item</button>
+                  <button type="button" class="btn btn-warning me-2" id="btnIUpdate">Update</button>
+                <button type="button" class="btn btn-success" id="saveItem">Save Item</button>
               </div>
             </div>
           </div>
@@ -408,13 +410,13 @@
 
     <section class="row mt-sm-2 ">
       <div class="col-12   text-sm-end text-lg-end ">
-        <button type="button" class="btn btn-primary text-sm-end ">View All Items</button>
+        <button type="button" class="btn btn-primary text-sm-end " id="viewAllItem">View All Items</button>
       </div>
       <div class="col-12 mt-5">
         <table class="table mt-3 table-hover">
           <thead class="" style="border-radius: 10px; background: rgba(55, 38, 39, 0.31)">
           <tr>
-            <th scope="col"></th>
+
             <th scope="col">Item Code</th>
             <th scope="col">Item Name</th>
             <th scope="col">Item Description</th>
@@ -422,9 +424,9 @@
             <th scope="col">Item Qty</th>
           </tr>
           </thead>
-          <tbody>
+          <tbody id="itemTbody">
           <tr>
-            <th scope="row">1</th>
+
             <td>I00-001</td>
             <td>Coca-Cola</td>
             <td>Bevarage</td>
@@ -432,7 +434,7 @@
             <td>1000</td>
           </tr>
           <tr>
-            <th scope="row">2</th>
+
             <td>I00-002</td>
             <td>Cashuew</td>
             <td>Nutrition</td>
@@ -619,7 +621,7 @@
 
 </script>
 <script src="controller/customerController.js"></script>
-
+<script src="controller/itemController.js"></script>
 <script src="db/db.js"></script>
 </body>
 </html>
