@@ -161,15 +161,17 @@
         </div>
 
         <div class="form-floating input-group mt-1 mb-3 col-10">
-          <input type="email" class="form-control bg-transparent"  placeholder="200072501233">
-          <label for="floatingInput">Customer Name/NIC/Code</label>
-          <button class="btn btn-outline-secondary text-dark bg-opacity-75" type="button"
-                  style="background-color: #905FCAC7">Search
-          </button>
+          <input type="email" class="form-control bg-transparent"  id="txtSearch" placeholder="200072501233">
+          <label for="txtSearch">Customer Name/NIC/Code</label>
+<!--          <button class="btn btn-outline-secondary text-dark bg-opacity-75" type="button"-->
+<!--                  style="background-color: #905FCAC7">Search-->
+<!--          </button>-->
+          <button type="button" class="btn btn-outline-secondary text-dark bg-opacity-75" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #905FCAC7" id="searchBtn">search</button>
+
         </div>
-        <button type="button" class="btn btn-danger  me-2">Delete</button>
-        <button type="button" class="btn btn-warning me-2">Update</button>
-        <button type="button" class="btn btn-success me-2">Clear</button>
+        <button type="button" class="btn btn-danger  me-2" id="btnDelete">Delete</button>
+
+        <button type="button" class="btn btn-success me-2" id="btnClear">Clear</button>
       </div>
 
       <div class="row col-sm-12 col-6 col-lg-6 col-xl-6">
@@ -242,7 +244,8 @@
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success">Save Customer</button>
+                <button type="button" class="btn btn-warning me-2" id="btnUpdate">Update</button>
+                <button type="button" class="btn btn-success" id="saveCus">Save Customer</button>
               </div>
             </div>
           </div>
@@ -259,7 +262,7 @@
         <table class="table mt-3 table-hover">
           <thead class="" style="border-radius: 10px; background: rgba(55, 38, 39, 0.31)">
           <tr>
-            <th scope="col"></th>
+
             <th scope="col">Customer Code</th>
             <th scope="col">Customer Name</th>
             <th scope="col">Customer NIC</th>
@@ -268,9 +271,9 @@
             <th scope="col">Customer Salary</th>
           </tr>
           </thead>
-          <tbody>
+          <tbody id="CusTbody">
           <tr>
-            <th scope="row">1</th>
+
             <td>C00-001</td>
             <td>Hiruni </td>
             <td>200072501233</td>
@@ -279,7 +282,7 @@
             <td>25000</td>
           </tr>
           <tr>
-            <th scope="row">2</th>
+
             <td>C00-002</td>
             <td>Chathu</td>
             <td>199912354367</td>
@@ -344,7 +347,7 @@
 
       <div class="col-sm-5 col-2 col-xl-2">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-dark col-sm-12" data-bs-toggle="modal" data-bs-target="#exampleModal">+
+        <button type="button" class="btn btn-dark col-sm-12" data-bs-toggle="modal" data-bs-target="#exampleModal1">+
           Add Item
         </button>
 
@@ -524,7 +527,7 @@
             <label for="QtyOnHand">Qty On Hand</label>
           </div>
         </div>
-        <button type="button" class="btn btn-success col-4 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal">Add To Cart</button>
+        <button type="button" class="btn btn-success col-4 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal4">Add To Cart</button>
       </div>
 
       <div class="row col-sm-12  col-lg-6 col-xl-3 justify-content-center align-items-center ms-3 position-relative" style="top: 40px;">
@@ -551,7 +554,7 @@
         <h4 class="col-5">Balance:</h4>
         <h4 class="col-5 text-danger text-success">1000</h4>
 
-        <button type="button" class="btn btn-dark col-10 " data-bs-toggle="modal" data-bs-target="#exampleModal">Place Order</button>
+        <button type="button" class="btn btn-dark col-10 " data-bs-toggle="modal" data-bs-target="#exampleModal2">Place Order</button>
       </div>
     </section>
 
@@ -580,7 +583,7 @@
             <td>160</td>
             <td>1000</td>
             <td>160000</td>
-            <td> <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button></td>
+            <td> <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal3">Delete</button></td>
           </tr>
           <tr>
             <th scope="row">2</th>
@@ -590,7 +593,7 @@
             <td>200</td>
             <td>2000</td>
             <td>400000</td>
-            <td> <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Delete</button></td>
+            <td> <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal3">Delete</button></td>
           </tr>
           </tbody>
         </table>
@@ -615,5 +618,8 @@
  }
 
 </script>
+<script src="controller/customerController.js"></script>
+
+<script src="db/db.js"></script>
 </body>
 </html>
