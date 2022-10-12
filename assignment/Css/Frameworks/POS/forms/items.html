@@ -239,6 +239,7 @@
 
   //load item
   function loadItem(){
+    $("#itemTbody").empty()
     for(var i of itemArray){
       var rawc=`<tr><td>${i.itemCode}</td><td>${i.itemName}</td><td>${i.itemDes}</td><td>${i.itemPrice}</td><td>${i.itemQty}</td></tr>`
       $("#itemTbody").append(rawc)
@@ -339,11 +340,11 @@
   function updateItem(itemCode) {
     let item = searchItem(itemCode);
     if (item != null) {
-      item.itemCode = $("#itemDescription").val();
-      item.itemName= $("#customerName").val();
-      item.itemDes = $("#customerNIC").val();
-      item.itemPrice = $("#customerDOB").val();
-      item.itemQty= $("#customerAddress").val();
+      item.itemCode = $("#itemCode").val();
+      item.itemName= $("#itemName").val();
+      item.itemDes = $("#itemDescription").val();
+      item.itemPrice = $("#itemPrice").val();
+      item.itemQty= $("#itemQty").val();
 
       loadItem()
       clear()
@@ -373,7 +374,7 @@
     let item = searchItem(itemCode);
     if (item != null) {
       let indexNumber = itemArray.indexOf(item);
-      item.splice(indexNumber, 1);
+      itemArray.splice(indexNumber, 1);
       loadItem();
       return true;
     } else {
