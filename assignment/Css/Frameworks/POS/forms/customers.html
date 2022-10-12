@@ -75,14 +75,15 @@
       </div>
 
       <div class="form-floating input-group mt-1 mb-3 col-10">
-        <input type="email" class="form-control bg-transparent" id="floatingInput" placeholder="200072501233">
-        <label for="floatingInput">Customer Name/NIC/Code</label>
-        <button class="btn btn-outline-secondary text-dark bg-opacity-75" type="button" id="button-addon2"
-                style="background-color: #905FCAC7">Search
-        </button>
+        <input type="email" class="form-control bg-transparent" id="txtSearch" placeholder="200072501233">
+        <label for="txtSearch">Customer Name/NIC/Code</label>
+<!--        <button class="btn btn-outline-secondary text-dark bg-opacity-75" type="button" id="searchBtn"-->
+<!--                style="background-color: #905FCAC7">Search-->
+<!--        </button>-->
+        <button type="button" class="btn btn-outline-secondary text-dark bg-opacity-75" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #905FCAC7" id="searchBtn">search</button>
       </div>
       <button type="button" class="btn btn-danger  me-2" id="btnDelete">Delete</button>
-      <button type="button" class="btn btn-warning me-2" id="btnUpdate">Update</button>
+<!--      <button type="button" class="btn btn-warning me-2" id="btnUpdate">Update</button>-->
       <button type="button" class="btn btn-success me-2" id="btnClear">Clear</button>
     </div>
 
@@ -90,7 +91,7 @@
 
       <div class="col-6 position-relative " style="top:40px; left: 480px;">
         <h5>Customer Code</h5>
-        <h6 class="text-muted">C00-001</h6>
+        <h6 class="text-muted" >C00-001</h6>
 
         <h5>Customer Name</h5>
         <h6 class="text-muted">Hiruni Piumika</h6>
@@ -156,6 +157,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-warning me-2" id="btnUpdate">Update</button>
               <button type="button" class="btn btn-success" id="saveCus">Save Customer</button>
             </div>
           </div>
@@ -173,7 +175,7 @@
       <table class="table mt-3 table-hover">
         <thead class="" style="border-radius: 10px; background: rgba(55, 38, 39, 0.31)">
         <tr>
-          <th scope="col"></th>
+
           <th scope="col">Customer Code</th>
           <th scope="col">Customer Name</th>
           <th scope="col">Customer NIC</th>
@@ -184,7 +186,7 @@
         </thead>
         <tbody id="CusTbody">
         <tr>
-          <th scope="row">1</th>
+
           <td>C00-001</td>
           <td>Hiruni </td>
           <td>200072501233</td>
@@ -193,7 +195,7 @@
           <td>25000</td>
         </tr>
         <tr>
-          <th scope="row">2</th>
+
           <td>C00-002</td>
           <td>Chathu</td>
           <td>199912354367</td>
@@ -233,11 +235,13 @@
         saveCustomer()
         loadCustomer()
         bindRowClickEvents()
+        clear()
       })
        //load customer//
       function loadCustomer(){
+           $("#CusTbody").empty()
         for(var i of customerArray){
-          var raw=`<tr><th></th><td>${i.CusCode}</td><td>${i.CusName}</td><td>${i.CusNic}</td><td>${i.CusDob}</td><td>${i.CusAdd}</td><td>${i.CusSalary}</td></tr>`
+          var raw=`<tr><td>${i.CusCode}</td><td>${i.CusName}</td><td>${i.CusNic}</td><td>${i.CusDob}</td><td>${i.CusAdd}</td><td>${i.CusSalary}</td></tr>`
           $("#CusTbody").append(raw)
         }
       }
@@ -277,28 +281,44 @@
         }
 
         //search customer
-        $("#customerCode").on('keyup', function (event) {
-          if (event.code == "Enter") {
-            let typedId = $("#customerCode").val();
-            let customer = searchCustomer(typedId);
-            if (customer != null) {
-              setTestifiedValues(customer.cusCode, customer.cusName, customer.cusNic, customer.cusDob,customer.cusAddress,customer.cusSalary);
-            } else {
-              alert("There is no customer available for that " + typedId);
-              setTestifiedValues("", "", "", "","","");
-            }
-          }
-        });
+        // $("#customerCode").on('keyup', function (event) {
+        //   if (event.code == "Enter") {
+        //     let typedId = $("#customerCode").val();
+        //     let customer = searchCustomer(typedId);
+        //     if (customer != null) {
+        //       setTestifiedValues(customer.cusCode, customer.cusName, customer.cusNic, customer.cusDob,customer.cusAddress,customer.cusSalary);
+        //     } else {
+        //       alert("There is no customer available for that " + typedId);
+        //       setTestifiedValues("", "", "", "","","");
+        //     }
+        //   }
+        // });
 
-        function searchCustomer(cusCode) {
+
+
+        $("#searchBtn").click(function () {
+          let typeCode=$("#txtSearch").val()
+          let customer = searchCustomer(typeCode);
+          if (customer != null) {
+            $("#customerCode").val(customer.CusCode);
+            $("#customerName").val(customer.CusName);
+            $("#customerNIC").val(customer.CusNic);
+            $("#customerDOB").val(customer.CusDob);
+            $("#customerAddress").val(customer.CusAdd);
+            $("#customerSalary").val(customer.CusSalary);
+          }else {
+            alert("error")
+          }
+
+        });
+        function searchCustomer(CusId) {
           for (let customer of customerArray) {
-            if (customer.code == cusCode) {
+            if (customer.CusCode == CusId) {
               return customer;
             }
           }
           return null;
         }
-
         function setTestifiedValues(code, name, nic, dob,address,salary) {
           $("#customerCode").val(code);
           $("#customerName").val(name);
@@ -313,9 +333,10 @@
           let customerCode=$('#customerCode').val()
           let response=updateCustomer(customerCode)
           if(response){
-            Swal.fire({
-              title: 'Customer Updated Successfully',
-            })
+            // Swal.fire({
+            //   title: 'Customer Updated Successfully',
+            // })
+            alert("updated")
             $('#customerCode').val('')
             $('#customerName').val('')
             $('#customerNIC').val('')
@@ -324,19 +345,19 @@
             $('#customerSalary').val('')
           }
           else{
-            Swal.fire("Update Failed" )
+            // Swal.fire("Update Failed" )
           }
         })
 
         function updateCustomer(cusCode) {
           let customer = searchCustomer(cusCode);
           if (customer != null) {
-            customer.cusCode = $("#customerCode").val();
-            customer.cusName = $("#customerName").val();
-            customer.cusNic = $("#customerNIC").val();
-            customer.cusDob = $("#customerDOB").val();
-            customer.cusAddress = $("#customerAddress").val();
-            customer.cusSalary = $("#customerSalary").val();
+            customer.CusCode = $("#customerCode").val();
+            customer.CusName= $("#customerName").val();
+            customer.CusNic = $("#customerNIC").val();
+            customer.CusDob = $("#customerDOB").val();
+            customer.CusAdd = $("#customerAddress").val();
+            customer.CusSalary = $("#customerSalary").val();
             loadCustomer();
             clear()
             setTestifiedValues()
@@ -348,6 +369,19 @@
         }
 
         //remove customer
+        $("#btnDelete").click(function () {
+          let deleteCode = $("#txtSearch").val();
+
+          let del = confirm("Do you really want to delete customer id :" + deleteCode);
+          if (del){
+            if (deleteCustomer(deleteCode)) {
+              setTestifiedValues("", "", "", "","","");
+            } else {
+              alert("No such customer to delete. please check the id");
+            }
+          }
+        });
+
         function deleteCustomer(customerID) {
           let customer = searchCustomer(customerID);
           if (customer != null) {
@@ -360,18 +394,7 @@
           }
         }
 
-        $("#btnDelete").click(function () {
-          let deleteCode = $("#customerCode").val();
 
-          let del = confirm("Do you really want to delete customer id :" + deleteCode);
-          if (del){
-            if (deleteCustomer(deleteCode)) {
-              setTestifiedValues("", "", "", "");
-            } else {
-              alert("No such customer to delete. please check the id");
-            }
-          }
-        });
 </script>
 </body>
 </html>
