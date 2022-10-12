@@ -76,15 +76,16 @@
       </div>
 
       <div class="form-floating input-group mt-1 mb-3 col-10">
-        <input type="email" class="form-control bg-transparent" id="floatingInput" placeholder="2000072501233">
-        <label for="floatingInput">Name</label>
-        <button class="btn btn-outline-secondary text-dark bg-opacity-75" type="button" id="button-addon2"
-                style="background-color: #905FCAC7">Search
-        </button>
+        <input type="email" class="form-control bg-transparent" id="itemSearch" placeholder="2000072501233">
+        <label for="itemSearch">Name</label>
+<!--        <button class="btn btn-outline-secondary text-dark bg-opacity-75" type="button" id="button-addon2"-->
+<!--                style="background-color: #905FCAC7">Search-->
+<!--        </button>-->
+        <button type="button" class="btn btn-outline-secondary text-dark bg-opacity-75" data-bs-toggle="modal" data-bs-target="#exampleModal" style="background-color: #905FCAC7" id="searchIBtn">search</button>
       </div>
-      <button type="button" class="btn btn-danger  me-2">Delete</button>
-      <button type="button" class="btn btn-warning me-2">Update</button>
-      <button type="button" class="btn btn-success me-2">Clear</button>
+      <button type="button" class="btn btn-danger  me-2" id="deleteIBtn">Delete</button>
+<!--      <button type="button" class="btn btn-warning me-2">Update</button>-->
+      <button type="button" class="btn btn-success me-2" id="btnIClear">Clear</button>
     </div>
 
     <div class="row col-sm-12 col-6 col-lg-6 col-xl-6">
@@ -161,6 +162,7 @@
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-warning me-2" id="btnIUpdate">Update</button>
               <button type="button" class="btn btn-success" id="saveItem">Save Item</button>
             </div>
           </div>
@@ -172,13 +174,13 @@
 
   <section class="row mt-sm-2 ">
     <div class="col-12   text-sm-end text-lg-end ">
-      <button type="button" class="btn btn-primary text-sm-end ">View All Items</button>
+      <button type="button" class="btn btn-primary text-sm-end " id="viewAllItem">View All Items</button>
     </div>
     <div class="col-12 mt-5">
       <table class="table mt-3 table-hover">
         <thead class="" style="border-radius: 10px; background: rgba(55, 38, 39, 0.31)">
         <tr>
-          <th scope="col"></th>
+
           <th scope="col">Item Code</th>
           <th scope="col">Item Name</th>
           <th scope="col">Item Description</th>
@@ -188,7 +190,7 @@
         </thead>
         <tbody id="itemTbody">
         <tr>
-          <th scope="row">1</th>
+
           <td>I00-001</td>
           <td>Coca-Cola</td>
           <td>Bevarage</td>
@@ -196,7 +198,7 @@
           <td>1000</td>
         </tr>
         <tr>
-          <th scope="row">2</th>
+
           <td>I00-002</td>
           <td>Cashuew</td>
           <td>Nutrition</td>
@@ -211,6 +213,7 @@
 </main>
 <script src="../assets/js/bootstrap.min.js"></script>
 <script>
+  //save item
   var itemArray=[]
 
   function saveItems(){
@@ -230,12 +233,151 @@
     alert("Item Saved")
     saveItems()
     loadItem()
+    bindRowClickEvents()
+    clear()
   })
 
+  //load item
   function loadItem(){
     for(var i of itemArray){
-      var rawc=`<tr><th></th><td>${i.itemCode}</td><td>${i.itemName}</td><td>${i.itemDes}</td><td>${i.itemPrice}</td><td>${i.itemQty}</td></tr>`
+      var rawc=`<tr><td>${i.itemCode}</td><td>${i.itemName}</td><td>${i.itemDes}</td><td>${i.itemPrice}</td><td>${i.itemQty}</td></tr>`
       $("#itemTbody").append(rawc)
+    }
+  }
+
+  $("#viewAllItem").click(function () {
+    loadItem()
+  });
+
+  //table row val select
+  function bindRowClickEvents() {
+    $("#itemTbody>tr").click(function () {
+      let Icode = $(this).children(":eq(0)").text();
+      let Iname = $(this).children(":eq(1)").text();
+      let Des = $(this).children(":eq(2)").text();
+      let price = $(this).children(":eq(3)").text();
+      let qty = $(this).children(":eq(4)").text();
+
+
+      $('#itemCode').val(Icode);
+      $('#itemName').val(Iname);
+      $('#itemDescription').val(Des);
+      $('#itemPrice').val(price);
+      $('#itemQty').val(qty);
+
+
+    });
+  }
+
+  //clear inputField
+  function clear(){
+    $('#itemCode').val('')
+    $('#itemName').val('')
+    $('#itemDescription').val('')
+    $('#itemPrice').val('')
+    $('#itemQty').val('')
+
+  }
+
+
+
+
+
+  $("#searchIBtn").click(function () {
+    let typeCode=$("#itemSearch").val()
+    let item = searchItem(typeCode);
+    if (item != null) {
+      $("#itemCode").val(item.itemCode);
+      $("#itemName").val(item.itemName);
+      $("#itemDescription").val(item.itemDes);
+      $("#itemPrice").val(item.itemPrice);
+      $("#itemQty").val(item.itemQty);
+
+    }else {
+      alert("error")
+    }
+
+  });
+  function searchItem(itemId) {
+    for (let item of itemArray) {
+      if (item.itemCode == itemId) {
+        return item;
+      }
+    }
+    return null;
+  }
+  function setTestifiedValues(Icode, Iname, Des, price,qty) {
+    $("#itemCode").val(Icode);
+    $("#itemName").val(Iname);
+    $("#itemDescription").val(Des);
+    $("#itemPrice").val(price);
+    $("#itemQty").val(qty);
+
+  }
+
+  //update customer
+  $('#btnIUpdate').click(function(){
+    let ItemCode=$('#itemCode').val()
+    let response=updateItem(ItemCode)
+    if(response){
+      // Swal.fire({
+      //   title: 'Customer Updated Successfully',
+      // })
+      alert("updated")
+      $('#itemCode').val('')
+      $('#itemName').val('')
+      $('#itemDescription').val('')
+      $('#itemPrice').val('')
+      $('#itemQty').val('')
+
+    }
+    else{
+      // Swal.fire("Update Failed" )
+    }
+  })
+
+  function updateItem(itemCode) {
+    let item = searchItem(itemCode);
+    if (item != null) {
+      item.itemCode = $("#itemDescription").val();
+      item.itemName= $("#customerName").val();
+      item.itemDes = $("#customerNIC").val();
+      item.itemPrice = $("#customerDOB").val();
+      item.itemQty= $("#customerAddress").val();
+
+      loadItem()
+      clear()
+      setTestifiedValues()
+      return true;
+    } else {
+      return false;
+    }
+
+  }
+
+  //remove customer
+  $("#deleteIBtn").click(function () {
+    let deleteCode = $("#itemSearch").val();
+
+    let del = confirm("Do you really want to delete item code :" + deleteCode);
+    if (del){
+      if (deleteItem(deleteCode)) {
+        setTestifiedValues("", "", "", "","");
+      } else {
+        alert("No such customer to delete. please check the id");
+      }
+    }
+  });
+
+  function deleteItem(itemCode) {
+    let item = searchItem(itemCode);
+    if (item != null) {
+      let indexNumber = itemArray.indexOf(item);
+      item.splice(indexNumber, 1);
+      loadItem();
+      return true;
+    } else {
+      return false;
     }
   }
 </script>
