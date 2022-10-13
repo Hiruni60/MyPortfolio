@@ -68,6 +68,91 @@ nav .icon-b .lines{
     transition: all .5s ease-in-out;
 }
 
+/* ASSIGNMENT */
+#subnav-main {
+    list-style-type: none;
+    position: absolute;
+    width: 120px;
+    top: 44px;
+    right: 25px;
+    background-color:transparent;
+    visibility: hidden;
+    /* background-color: #c2d3d8; */
+    border: 2px solid #6a1a21;
+    border-radius: 10px;
+}
+#subnav li {
+    border-bottom: 1px solid #06357a;
+    position: relative;
+    height: 50px;
+    transition: all 2s;
+}
+
+
+#subnav-main .sub-nav-links {
+    background-color: transparent;
+    border-bottom: 1px solid #7a7e80;
+    margin: 0;
+    color: #06357a;
+}
+
+.sub-nav-links,
+.inner-nav {
+    list-style-type: none;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    color: rgb(255, 255, 255);
+    margin: auto;
+    height: fit-content;
+    top: 0;
+    bottom: 0;
+    padding: 5px 0;
+    font-size: 20px;
+}
+
+
+#assignments-tab:hover+#subnav-main {
+    visibility: visible;
+}
+#subnav-main:hover {
+    visibility: visible;
+}
+.sub-nav-links:hover+.inner-nav {
+    display: block;
+    color: #f9004d;
+}
+.inner-nav {
+    font-size: 15px;
+    display: none;
+    transition: all 2s;
+    padding: 5px;
+}
+.inner-nav li {
+    padding: 3px;
+    width: 88%;
+    font-style: italic;
+
+}
+.inner-nav li a {
+    all: initial;
+    color: #177df1;
+}
+.inner-nav li:hover {
+    background-color: #4de7ff;
+    cursor: pointer;
+    border: 1px solid #ffffff ;
+    border-radius: 10px;
+}
+.inner-nav li a:hover {
+    cursor: pointer;
+    color:  #f9004d;
+}
+.inner-nav:hover {
+    display: block;
+}
+
 /*home section styling*/
 .Home{
     display: flex;
@@ -757,7 +842,7 @@ footer{
         position: absolute;
         left: 56%;
         margin: auto;
-        bottom: 201px;
+        bottom: 242px;
         width: 365px;
         height: 383px;
     }

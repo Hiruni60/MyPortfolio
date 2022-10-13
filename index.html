@@ -11,8 +11,11 @@
     <meta name="viewport" content="width=device-width initial-scale=1 maximum-scale=1 minimum-scale=-2 user-scalable=no">
     <meta name="theme-color" content="blue">
     <link rel="stylesheet" href="assest/css/Style.css">
+<!--    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
 </head>
-
+<!--<style>-->
+<!--    .mySlides {display:none;}-->
+<!--</style>-->
 <body>
 <header class="header" id="header">
     <!-- navigation bar -->
@@ -27,6 +30,79 @@
                     <li><a href="#Services">Services</a></li>
                     <li><a href="#Projects">Projects</a></li>
                     <li><a href="#Contacts">Contacts</a></li>
+                    <li><a href="#" id="assignments-tab"><b>Assignment</b></a>
+                        <ul id="subnav-main">
+                            <li><a href="#" class="sub-nav-links">Basics</a>
+                                <ul class="inner-nav">
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/Css/Basics/case1.html">case
+                                        1</a></li>
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/Css/Basics/case2.html">case
+                                        2</a></li>
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/Css/Basics/case3.html">case
+                                        3</a></li>
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/Css/Basics/case4.html">case
+                                        4</a></li>
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/Css/Basics/case5.html">case
+                                        5</a></li>
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/Css/Basics/case6.html">case
+                                        6</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="sub-nav-links">Frameworks</a>
+                                <ul class="inner-nav">
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/Css/Frameworks/POS/index.html">POS
+                                        </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="sub-nav-links">Transitions</a>
+                                <ul class="inner-nav">
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/Css/Transitions/case1/index.html">case
+                                        1</a></li>
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/Css/Transitions/case2/index.html">case
+                                        2</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="sub-nav-links">JS</a>
+                                <ul class="inner-nav">
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/js/SPA/index.html">SPA</a>
+                                    </li>
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/js/Calculator/calIndex.html">Calculator</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#" class="sub-nav-links">Animations</a>
+                                <ul class="inner-nav">
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/Css/Animation/case1/index.html">case
+                                        1</a></li>
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/Css/Animation/case2/index.html">case
+                                        2</a></li>
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/Css/Animation/case3/index.html">case
+                                        3</a></li>
+                                    <li><a
+                                            href="https://htmlpreview.github.io/?https://github.com/Hiruni60/MyPortfolio/blob/master/assignment/Css/Animation/case4/index.html">case
+                                        4</a></li>
+                                </ul>
+                        </ul>
+
+                    </li>
+
+
+                </ul>
+
                 </ul>
                 <label for="check" class="icon-b">
                     <div class="lines"></div>
@@ -209,17 +285,20 @@
     <section id="Projects">
         <div class="proj-name"><h1><u>MY PROJECTS</u></h1></div>
         <div class="firstC">
-            <img src="assest/arrow-back-ios-1781222-1518596.webp" alt="backButton" class="backBtn">
+            <img src="assest/arrow-back-ios-1781222-1518596.webp" alt="backButton" class="backBtn" onclick="plusDivs(-1)">&#10094;>
+<!--            <button class="w3-button w3-display-left w3-black" onclick="plusDivs(-1)">&#10094;</button>-->
         </div>
         <div class="middleC">
-            <div>
-                <img src="assest/1_XUrSasLtkB0VoXcLEMfJKg.jpeg" alt="" class="hotelProj">
-                <button class="download button1"><a href="https://github.com/Hiruni60/Hotel-Managment-System/archive/refs/heads/main.zip"> Download</a></button>
-            </div>
-            <div>
-                <img src="assest/z_bus-piii-New-Kee.jpg" alt="" class="keelsSMarketProj">
-                <button class="download button1"><a href="https://github.com/Hiruni60/Keells-Super-Market/archive/refs/heads/main.zip"> Download</a></button>
-            </div>
+
+                <div>
+                    <img src="assest/1_XUrSasLtkB0VoXcLEMfJKg.jpeg" alt="" class="hotelProj">
+                    <button class="download button1"><a href="https://github.com/Hiruni60/Hotel-Managment-System/archive/refs/heads/main.zip"> Download</a></button>
+                </div>
+                <div>
+                    <img src="assest/z_bus-piii-New-Kee.jpg" alt="" class="keelsSMarketProj">
+                    <button class="download button1"><a href="https://github.com/Hiruni60/Keells-Super-Market/archive/refs/heads/main.zip"> Download</a></button>
+                </div>
+
         </div>
         <div class="endC">
             <img src="assest/1200px-OOjs_UI_icon_next-ltr.svg.png" alt="nextButton" class="nextBtn">
@@ -283,5 +362,24 @@
     </div>
 </footer>
 <script src="https://kit.fontawesome.com/aeb57e265d.js" crossorigin="anonymous"></script>
+<script>
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+        showDivs(slideIndex += n);
+    }
+
+    function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+    }
+</script>
 </body>
 </html>
