@@ -17,7 +17,10 @@ $("#saveItem").click(function (){
     alert("Item Saved")
     saveItems()
     loadItem()
-    bindRowClickEvents()
+    bindRowClickEvents1()
+
+    loadItemCode()
+
     clear()
 })
 
@@ -35,7 +38,7 @@ $("#viewAllItem").click(function () {
 });
 
 //table row val select
-function bindRowClickEvents() {
+function bindRowClickEvents1() {
     $("#itemTbody>tr").click(function () {
         let Icode = $(this).children(":eq(0)").text();
         let Iname = $(this).children(":eq(1)").text();
@@ -91,7 +94,7 @@ function searchItem(itemId) {
     }
     return null;
 }
-function setTestifiedValues(Icode, Iname, Des, price,qty) {
+function setTestifiedValues1(Icode, Iname, Des, price,qty) {
     $("#itemCode").val(Icode);
     $("#itemName").val(Iname);
     $("#itemDescription").val(Des);
@@ -132,7 +135,7 @@ function updateItem(itemCode) {
 
         loadItem()
         clear()
-        setTestifiedValues()
+        setTestifiedValues1()
         return true;
     } else {
         return false;
@@ -147,7 +150,7 @@ $("#deleteIBtn").click(function () {
     let del = confirm("Do you really want to delete item code :" + deleteCode);
     if (del){
         if (deleteItem(deleteCode)) {
-            setTestifiedValues("", "", "", "","");
+            setTestifiedValues1("", "", "", "","");
         } else {
             alert("No such customer to delete. please check the id");
         }
