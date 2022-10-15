@@ -15,6 +15,7 @@ function saveCustomer(){
 
     customerArray.push(customerObject)
     console.log(customerArray)
+     // loadCustomeCode()
 
 }
 
@@ -23,7 +24,10 @@ $("#saveCus").click(function (){
     saveCustomer()
     loadCustomer()
     bindRowClickEvents()
-    clear()
+
+    loadCustomeCode()
+
+    clear1()
 })
 //load customer//
 function loadCustomer(){
@@ -59,7 +63,7 @@ function bindRowClickEvents() {
 }
 
 //clear inputField
-function clear(){
+function clear1(){
     $('#customerCode').val('')
     $('#customerName').val('')
     $('#customerNIC').val('')
