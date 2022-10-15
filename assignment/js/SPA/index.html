@@ -463,16 +463,16 @@
 
         <div class="col-6">
           <div class="form-floating input-group mt-1 ">
-            <input type="date" class="form-control bg-transparent " id="floatingInput">
-            <label for="floatingInput">Date</label>
+            <input type="date" class="form-control bg-transparent " id="dateI">
+            <label for="dateI">Date</label>
           </div>
         </div>
 
         <div class=" col-6 mt-4 mb-5 ">
-          <select class="form-select bg-transparent " aria-label="Default select example">
+          <select class="form-select bg-transparent " aria-label="Default select example" id="cmbCusCode">
             <option selected class="col-6">Customer</option>
-            <option value="1">C00-001</option>
-            <option value="2">C00-002</option>
+<!--            <option value="1">C00-001</option>-->
+<!--            <option value="2">C00-002</option>-->
           </select>
         </div>
 
@@ -495,10 +495,10 @@
       <div class="row col-sm-12 col-4 col-lg-5 mt-5 ms-3 col-xl-4 justify-content-end">
         <h4 class="rounded-3 p-2 bg-opacity-25 bg-success" style="border: 1px solid black; height: max-content; margin: 0;">Select Items</h4>
         <div class=" col-6 mt-4 mb-5 ">
-          <select class="form-select bg-transparent " aria-label="Default select example">
+          <select class="form-select bg-transparent " aria-label="Default select example" id="cmbItemCode">
             <option selected class="col-6">Item</option>
-            <option value="1">I00-001</option>
-            <option value="2">I00-002</option>
+<!--            <option value="1">I00-001</option>-->
+<!--            <option value="2">I00-002</option>-->
           </select>
         </div>
         <div class="col-6">
@@ -529,15 +529,28 @@
             <label for="QtyOnHand">Qty On Hand</label>
           </div>
         </div>
-        <button type="button" class="btn btn-success col-4 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal4">Add To Cart</button>
+
+        <div class="col-6">
+          <div class="form-floating input-group mt-1 ">
+            <input type="text" class="form-control bg-transparent " id="QtyItem" placeholder="Hiruni">
+            <label for="QtyItem">Item Qty</label>
+          </div>
+        </div>
+        <button type="button" class="btn btn-success col-4 mt-3" data-bs-toggle="modal" data-bs-target="#exampleModal4" id="addToCart">Add To Cart</button>
       </div>
 
       <div class="row col-sm-12  col-lg-6 col-xl-3 justify-content-center align-items-center ms-3 position-relative" style="top: 40px;">
-        <h4 class="col-5">Sub-Total:</h4>
-        <h4 class="col-5 text-danger text-start">160000</h4>
+        <div class="col-12">
+          <div class="form-floating input-group  ">
+            <h4 class="col-5"> Total :</h4>
+            <input type="text" class="form-control bg-transparent " id="Tot" placeholder="Hiruni">
+            <!--            <label for="discount">Discount</label>-->
+          </div>
+        </div>
+
 
         <div class="col-12">
-          <div class="form-floating input-group">
+          <div class="form-floating input-group ">
             <input type="text" class="form-control bg-transparent " id="cash" placeholder="Hiruni">
             <label for="cash">Cash</label>
           </div>
@@ -550,13 +563,27 @@
           </div>
         </div>
 
-        <h4 class="col-5">Total:</h4>
-        <h4 class="col-5 text-danger text-start">150000</h4>
+<!--        <h4 class="col-5">Sub-Total:</h4>-->
+<!--        <h4 class="col-5 text-danger text-start">150000</h4>-->
+        <div class="col-12">
+          <div class="form-floating input-group  ">
+            <h4 class="col-5">Sub Total :</h4>
+            <input type="text" class="form-control bg-transparent " id="subTot" placeholder="Hiruni">
+<!--            <label for="discount">Discount</label>-->
+          </div>
+        </div>
 
-        <h4 class="col-5">Balance:</h4>
-        <h4 class="col-5 text-danger text-success">1000</h4>
 
-        <button type="button" class="btn btn-dark col-10 " data-bs-toggle="modal" data-bs-target="#exampleModal2">Place Order</button>
+
+        <div class="col-12">
+          <div class="form-floating input-group  ">
+            <h4 class="col-5">Balance:</h4>
+            <input type="text" class="form-control bg-transparent " id="balance" placeholder="Hiruni">
+            <!--            <label for="discount">Discount</label>-->
+          </div>
+        </div>
+
+        <button type="button" class="btn btn-dark col-10 " data-bs-toggle="modal" data-bs-target="#exampleModal2" id="placeOrderBtn">Place Order</button>
       </div>
     </section>
 
@@ -576,7 +603,7 @@
 <!--            <th scope="col">Option</th>-->
           </tr>
           </thead>
-          <tbody>
+          <tbody id="orderTBody">
           <tr>
 
             <td>I00-001</td>
@@ -622,6 +649,8 @@
 </script>
 <script src="controller/customerController.js"></script>
 <script src="controller/itemController.js"></script>
+  <script src="controller/orderController.js"></script>
+  <script src="controller/cartController.js"></script>
 <script src="db/db.js"></script>
 </body>
 </html>
