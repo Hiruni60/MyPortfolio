@@ -21,7 +21,7 @@ $("#saveItem").click(function (){
 
     loadItemCode()
 
-    clear()
+    clear2()
 })
 
 //load item
@@ -58,7 +58,7 @@ function bindRowClickEvents1() {
 }
 
 //clear inputField
-function clear(){
+function clear2(){
     $('#itemCode').val('')
     $('#itemName').val('')
     $('#itemDescription').val('')
@@ -134,7 +134,7 @@ function updateItem(itemCode) {
         item.itemQty= $("#itemQty").val();
 
         loadItem()
-        clear()
+        clear2()
         setTestifiedValues1()
         return true;
     } else {
