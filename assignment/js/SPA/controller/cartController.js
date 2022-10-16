@@ -38,6 +38,13 @@ $('#addToCart').click(function(){
     saveCart();
     loadAllOrders();
     // genarateOrderId()
+
+    $('#cmbItemCode').val('');
+    $('#itemName2').val('');
+    $('#itemDescription2').val('');
+    $('#unitPrice').val('');
+    $('#QtyOnHand').val('');
+    $('#itemQty').val('');
 })
 //////CALCULATE///
 // $('#QtyItem').keyup(function(){
