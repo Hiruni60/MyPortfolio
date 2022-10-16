@@ -35,7 +35,7 @@ $('#cmbItemCode').click(function(){
     }
 })
 
-$("#orderId").val(genarateOrderId())
+$("#orderID").val(genarateOrderId())
 //SAVE ORDER//
 function genarateOrderId(){
     if (orderArray.length > 0) {
@@ -60,21 +60,7 @@ function saveOrder(){
     let date=$('#dateI').val()
     let itemsC=cartArray
     let total = $("#subTot").val()
-    // let cusIds;
-    // let itemCodes;
-    // let itemNames;
-    // let itemPrices;
-    // let itemsqtys;
-    // let balances;
-    // for(let i of cartobj){
-    //     cusIds=i.cusId
-    //     itemCodes=i.itemCode
-    //     itemNames=i.itemName
-    //     itemPrices=i.itemPrice
-    //     itemsqtys=i.itemsqty
-    //     balances=i.balance
 
-    // }
 
     var orderObj={
         orderId,
@@ -84,9 +70,10 @@ function saveOrder(){
         total
     }
     orderArray.push(orderObj)
-    $("#orderId").val(genarateOrderId())
+    $("#orderID").val(genarateOrderId())
     // console.log('order='+orderArray)
     // console.log('price in= '+itemPrice)
+    cartArray = []
 }
 
 
@@ -95,34 +82,45 @@ function saveOrder(){
 $('#placeOrderBtn').click(function(){
     $('#orderTBody').empty();
     console.log("this runs")
-    clear()
     saveOrder()
     //$('#orderId').val(calculateNextId())
     alert('order has been saved!')
 
+    clear()
 
 })
 
 //find order id
-$('#orderId').on('keyup',function(event){
+$('#orderID').keyup( function (event){
+    console.log("onkeyup")
     if(event.which==13){
 
         let order = orderArray.find((orderO) => {
-            return orderO.orderId ==  $('#orderId').val()
+            return orderO.orderId ==  $('#orderID').val()
         })
         console.log(order)
-        // $('#order-tabelbody').empty();
+        $('#orderTBody').empty();
         order.itemsC.forEach(i => {
                 var TbaleRow=`<tr ><td>${i.itemCode1}</td><td>${i.itemName1}</td><td>${i.itemDes1}</td><td>${i.itemPrice1}</td><td>${i.itemsqty}</td><td>${i.Total}</td><td>${'<button class="btn btn-outline-danger" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;" id="btnRemove">remove</button>'}</td></tr>`
                 $('#orderTBody').append(TbaleRow)
             }
         )
-
+        $("#cmbCusCode").change(function(){
+            let val= $('#cmbCusCode').val()
+            //    $('#cusid').val(val)
+            let cus=searchCustomer(val);
+            if (cus != null) {
+                // $('#customerCode').val(cus.CusCode)
+                $('#customerName2').val(cus.CusName)
+                $('#customerAddress2').val(cus.CusAdd)
+            }
+        })
         $("#subTot").val(order.total)
-        $("#cmbCusCode").val(order.customCode)
+        $("#cmbCusCode").val(order.customCode).change()
+
 
     }
-}).va
+})
 //
 // // subtotal
 // function subtot(array){
