@@ -34,7 +34,13 @@ ul {
     height: 100%;
     /*overflow: hidden;*/
 }
-nav ul li{
+/*nav ul li{*/
+/*    padding:20px 20px;*/
+/*    display: inline-block;*/
+/*    list-style-type: none;*/
+/*    height: 100%;*/
+/*}*/
+.navMainList{
     padding:20px 20px;
     display: inline-block;
     list-style-type: none;
@@ -72,20 +78,22 @@ nav .icon-b .lines{
 #subnav-main {
     list-style-type: none;
     position: absolute;
-    width: 120px;
+    width: 129px;
     top: 44px;
-    right: 25px;
+    right: 10px;
     background-color:transparent;
     visibility: hidden;
     /* background-color: #c2d3d8; */
     border: 2px solid #6a1a21;
     border-radius: 10px;
+    height: 200px;
 }
 #subnav li {
     border-bottom: 1px solid #06357a;
     position: relative;
     height: 50px;
     transition: all 2s;
+    padding: 0 0;
 }
 
 
@@ -1032,7 +1040,13 @@ footer{
         height: 100%;
     /*/overflow: hidden;/*/
     }
-    nav ul li{
+    /*nav ul li{*/
+    /*    padding:20px 20px;*/
+    /*    display: inline-block;*/
+    /*    list-style-type: none;*/
+    /*    height: 100%;*/
+    /*}*/
+    .navMainList{
         padding:20px 20px;
         display: inline-block;
         list-style-type: none;
