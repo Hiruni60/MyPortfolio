@@ -168,3 +168,91 @@ function deleteItem(itemCode) {
         return false;
     }
 }
+
+//validation
+
+$("#itemCode").focus();
+
+const itemIDRegEx = /^(I00-)[0-9]{1,3}$/;
+const itemNameRegEx = /^[A-Z][a-z]{3,20}$/;
+const itemDesRegEx = /^[A-Z][a-z]{3,20}$/;
+const unitPriceRegEx = /^[0-9]{1,}$/;
+const itemQtyRegEx = /^[0-9]{1,}$/;
+
+
+let itemValidations = [];
+itemValidations.push({reg: itemIDRegEx, field: $('#itemCode')});
+itemValidations.push({reg: itemNameRegEx, field: $('#itemName'),error:''});
+itemValidations.push({reg: itemDesRegEx, field: $('#itemDescription'),error:''});
+itemValidations.push({reg: unitPriceRegEx, field: $('#itemPrice'),error:''});
+itemValidations.push({reg: itemQtyRegEx, field: $('#itemQty'),error:''});
+
+
+
+//disable key
+$("#itemCode,#itemName,#itemDescription,#itemPrice,#itemQty").on('keydown', function (event) {
+    if (event.key == "Tab") {
+        event.preventDefault();
+    }
+});
+
+$("#itemCode,#itemName,#itemDescription,#itemPrice,#itemQty").on('keyup', function (event) {
+    checkItemValidity();
+});
+
+$("#itemCode,#itemName,#itemDescription,#itemPrice,#itemQty").on('blur', function (event) {
+    checkItemValidity();
+});
+
+function checkItemValidity() {
+    let errorCount=0;
+    for (let validation of itemValidations) {
+        if (check(validation.reg,validation.field)) {
+            textItemSuccess(validation.field,"");
+        } else {
+            errorCount=errorCount+1;
+            setItemTextError(validation.field,validation.error);
+        }
+    }
+    setButtonState(errorCount);
+}
+
+function checkItems(regex, txtField) {
+    let inputValue = txtField.val();
+    return regex.test(inputValue) ? true : false;
+}
+
+function setItemTextError(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultText(txtField,"");
+    } else {
+        txtField.css('border', '2px solid red');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function textItemSuccess(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultItemText(txtField,"");
+    } else {
+        txtField.css('border', '2px solid green');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function defaultItemText(txtField,error) {
+    txtField.css("border", "1px solid #ced4da");
+    txtField.parent().children('span').text(error);
+}
+
+function focusText(txtField) {
+    txtField.focus();
+}
+
+function setButtonState(value){
+    if (value>0){
+        $("#saveItem").attr('disabled',true);
+    }else{
+        $("#saveItem").attr('disabled',false);
+    }
+}
