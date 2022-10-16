@@ -185,3 +185,87 @@ function deleteCustomer(customerID) {
         return false;
     }
 }
+
+//validation
+
+$("#customerCode").focus();
+
+const cusCodeRegEx = /^(C00-)[0-9]{1,3}$/;
+const cusNameRegEx = /^[A-Z][a-z]{3,15}$/;
+const cusAddressRegEx = /^[A-z ]{3,60}$/;
+const cusSalaryRegEx = /^[0-9]{1,}[.]?[0-9]{1,2}$/;
+
+let customerValidations = [];
+customerValidations.push({reg: cusCodeRegEx, field: $('#customerCode')});
+customerValidations.push({reg: cusNameRegEx, field: $('#customerName'),error:''});
+customerValidations.push({reg: cusAddressRegEx, field: $('#customerAddress'),error:''});
+customerValidations.push({reg: cusSalaryRegEx, field: $('#customerSalary'),error:''});
+
+
+//disable key
+$("#customerCode,#customerName,#customerAddress,#customerSalary").on('keydown', function (event) {
+    if (event.key == "Tab") {
+        event.preventDefault();
+    }
+});
+
+$("#customerCode,#customerName,#customerAddress,#customerSalary").on('keyup', function (event) {
+    checkValidity();
+});
+
+$("#customerCode,#customerName,#customerAddress,#customerSalary").on('blur', function (event) {
+    checkValidity();
+});
+
+function checkValidity() {
+    let errorCount=0;
+    for (let validation of customerValidations) {
+        if (check(validation.reg,validation.field)) {
+            textSuccess(validation.field,"");
+        } else {
+            errorCount=errorCount+1;
+            setTextError(validation.field,validation.error);
+        }
+    }
+    setButtonState(errorCount);
+}
+
+function check(regex, txtField) {
+    let inputValue = txtField.val();
+    return regex.test(inputValue) ? true : false;
+}
+
+function setTextError(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultText(txtField,"");
+    } else {
+        txtField.css('border', '2px solid red');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function textSuccess(txtField,error) {
+    if (txtField.val().length <= 0) {
+        defaultText(txtField,"");
+    } else {
+        txtField.css('border', '2px solid green');
+        txtField.parent().children('span').text(error);
+    }
+}
+
+function defaultText(txtField,error) {
+    txtField.css("border", "1px solid #ced4da");
+    txtField.parent().children('span').text(error);
+}
+
+function focusText(txtField) {
+    txtField.focus();
+}
+
+function setButtonState(value){
+    if (value>0){
+        $("#saveCus").attr('disabled',true);
+    }else{
+        $("#saveCus").attr('disabled',false);
+    }
+}
