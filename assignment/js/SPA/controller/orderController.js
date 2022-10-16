@@ -171,4 +171,8 @@ function clear(){
     $('#Tot').val('');
     // $('#customerpayment').val('')
     // $('itemsqty').val('');
+    $('#subTot').val('');
+    $('#discount').val('');
+    $('#balance').val('');
+    $('#cash').val('');
 }
