@@ -151,7 +151,7 @@ function updateCustomer(cusCode) {
         customer.CusAdd = $("#customerAddress").val();
         customer.CusSalary = $("#customerSalary").val();
         loadCustomer();
-        clear()
+        clear1()
         setTestifiedValues()
         return true;
     } else {
